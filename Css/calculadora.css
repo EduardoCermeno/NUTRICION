@@ -1,0 +1,35 @@
+body{
+  background-color: rgb(12, 145, 197);
+
+}
+#titulocalculadora{
+
+margin-left: 25%;
+}
+
+
+#contenedor1{
+   
+margin-bottom: 85%;
+margin-left: 0px;
+padding-top: 25px;
+
+}
+#formulario{
+
+margin-top:10px ;
+display:inline-flex;
+
+
+}
+
+#contenedor2{
+
+  padding-top: 50px;
+}
+
+
+#citacontenedor1{
+
+  margin-bottom: 50%;
+}

@@ -5,7 +5,7 @@
 			$servidor = "localhost";
 			$usuario = "root";
 			$password = "";
-			$base = "nutricion";
+			$base = "acilo";
 
 			$conexion = mysqli_connect($servidor, 
 										$usuario, 

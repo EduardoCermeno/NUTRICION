@@ -54,9 +54,9 @@ class Usuario extends Conectar{
 				
 			// 	return 2;
 			// } else {
-				$sql = "SELECT CodigoPaciente
+				$sql = "SELECT Dpi
 				FROM tb_paciente
-				WHERE CodigoPaciente = '$datos[codigopaciente]'";
+				WHERE Dpi = '$datos[dpi]'";
    $result = mysqli_query($conexion, $sql);
    $datosResultado = mysqli_fetch_array($result);
 
@@ -66,17 +66,17 @@ if($datosResultado==null||$datosResultado==""){
 
 
 	
-			$sql = "INSERT INTO tb_paciente ( Id_usuario, CodigoPaciente, Nombre_Paciente, Apellido_Paciente, FechaNacimiento_Paciente, Género_Paciente, Etnia_Paciente) 
+			$sql = "INSERT INTO tb_paciente ( Id_usuario, Dpi, Nombre_Paciente, Apellido_Paciente, FechaNacimiento_Paciente, Genero_Paciente, EstadoPaciente) 
 							VALUES (?,?,?,?,?,?,?)";
 			$query = $conexion->prepare($sql);
 		
 			$query->bind_param("issssss", 	$datos['ID'],
-											$datos['codigopaciente'],
+											$datos['dpi'],
 											$datos['nombres'],
 											$datos['apellidos'],
 											$datos['fechaNac'],
 											$datos['genero'] ,
-											$datos['etnia'] 
+											$datos['estado'] 
 									);
 			$respuesta = $query->execute();
 			$query->close();

@@ -146,17 +146,17 @@ include "../header.php";
 		<div class="row">
 			<div class="col-sm-3"></div>
 			<div class="col-sm-6">
-				<form id="frmRegistro" method="post" onsubmit="return Registrar()" 
+				<form id="frmRegistro"   onsubmit="return Registrar()" 
 				autocomplete="off">
-        <label>Código de Paciente</label>
-					<input type="text" name="codigopaciente" id="codigopaciente" class="form-control" required="">
+        <label>DPI Del Paciente</label>
+					<input type="text" name="dpi" id="dpi" class="form-control" required="">
 					<label>Nombres</label>
 					<input type="text" name="nombre" id="nombre" class="form-control" required="">
 					<label>Apellidos</label>
 					<input type="text" name="Apellido" id="Apellido" class="form-control" required="" >
 					<label>FechaNacimiento</label>
 					<input type="date" name="fechaNac" id="FechaNac" class="form-control" required="">
-			 <label>Genero</label>
+			 <label>Género</label>
       
 					<!-- <input type="text" name="genero" id="genero" class="form-control" required="">  -->
           <select class="form-select" id="genero" name="genero" id="specificSizeSelect" required="">
@@ -166,16 +166,15 @@ include "../header.php";
      
       
     </select>
-          <label>Etni </label>
+          <label>ESTADO </label>
          
 					<!-- <input type="text" name="etnia" id="etnia" class="form-control" required="">
 					<br> -->
-          <select class="form-select" id="etnia" name="etnia" id="specificSizeSelect" required="">
+          <select class="form-select" id="estado" name="estado" id="specificSizeSelect" required="">
 
-      <option value="Ladino">Ladino</option>
-      <option value="Xinca">Xinca</option>
-      <option value="Maya">Maya</option>
-      <option value="Garifuna">Garifuna</option>
+      <option value="Ladino">Activo</option>
+      <option value="Xinca">INACTIVO</option>
+     
       
     </select>
 					<div class="row" style="margin-top: 10px;">
@@ -195,6 +194,8 @@ include "../header.php";
 
 
 
+ 
+
                 </div>
             </div>
             <script src="../../Librerias/jquery-3.6.0.min.js"></script>
@@ -208,7 +209,7 @@ include "../header.php";
             data:$('#frmRegistro').serialize(),
             url:"../../Controlador/Usuarios/RegistrarPaciente.php",
             success:function(respuesta) {
-               
+               alert(respuesta);
               respuesta = respuesta.trim();
           
 

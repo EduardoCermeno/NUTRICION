@@ -33,18 +33,18 @@ include "../header.php";
 			<div class="col-sm-8">
 				<form id="frmRegistro" method="post" onsubmit="return Registrar()" 
 				autocomplete="off">
-        <label>Código de Paciente</label>
-					<input type="text" name="CodigoPaciente" id="CodigoPaciente" class="form-control" required="">
-          <label>Nombres del padre</label>
-					<input type="text" name="nombresP" id="nombresP" class="form-control" required="">
-					<label>Apellidos del Padre</label>
-					<input type="text" name="apellidosP" id="apellidoPs" class="form-control" required="">
-					<label>Nombres de la madre</label>
-					<input type="text" name="nombresM" id="nombresM" class="form-control" required="" >
-					<label>Apellidos de la madre</label>
-					<input type="text" name="apellidosM" id="apellidosM" class="form-control" required="">
+        <label>DPI DEL PACIENTE</label>
+					<input type="text" name="DpiPaciente" id="DpiPaciente" class="form-control" required="">
+          <label>Nombre DE Encargado</label>
+					<input type="text" name="NombreEP" id="NombresenEP" class="form-control" required="">
+					<label>Apellidos DE Encargado</label>
+					<input type="text" name="ApellidosEP" id="ApellidoEP" class="form-control" required="">
+					<label>Teléfono</label>
+					<input type="text" name="TelefonoEP" id="TelefonoEP" class="form-control" required="" >
+					<label>Correo</label>
+					<input type="email" name="CorreoEP" id="CorreoEP" class="form-control" required="">
                     <label>Dirección</label>
-					<input type="text" name="dirección" id="dirección" class="form-control" required="">
+					<input type="text" name="DirecciónEP" id="DirecciónEP" class="form-control" required="">
                     
 			
           
@@ -76,11 +76,11 @@ include "../header.php";
         $.ajax({
             method:"POST",
             data:$('#frmRegistro').serialize(),
-            url:"../../Controlador/Usuarios/RegistrarPadres.php",
+            url:"../../Controlador/Usuarios/RegistrarEncargado.php",
             success:function(respuesta) {
                
               respuesta = respuesta.trim();
-         
+         alert(respuesta);
 
               if (respuesta == 1) {
                 $("#frmRegistro")[0].reset();

@@ -1,6 +1,6 @@
 <?php
 	session_start();
-require_once '../../Modelo/loguin.php';
+require_once '../../Modelo/RegistrarPaciente.php';
 
 
 	

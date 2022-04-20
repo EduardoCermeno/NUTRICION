@@ -1,7 +1,7 @@
 <?php
 	session_start();
-require_once '../../Modelo/loguin.php';
-$codigo=$_POST['codigopaciente'];
+ require_once '../../Modelo/RegistrarPaciente.php';
+$codigo=$_POST['dpi'];
 
 $sexo='';
  if($_POST['genero']==1){
@@ -9,24 +9,22 @@ $sexo='';
 	
  }else{
 
-	$sexo="femenino";
+	$sexo="Femenino";
  }
 
 $datos = array(
-    
-	
 "ID"=>$_SESSION['idUsuario'],
+"dpi"=>$_POST['dpi'],
 "nombres" => $_POST['nombre'],
-"codigopaciente"=>$_POST['codigopaciente'],
 "apellidos" => $_POST['Apellido'],
 "fechaNac" => $_POST['fechaNac'],
 "genero" =>$sexo,
-"etnia" => $_POST['etnia']
+"estado" => $_POST['estado'],
 );
+ 
+	 $usuarioObj = new Usuario();
 
-	$usuarioObj = new Usuario();
-
-	echo $usuarioObj->agregarUsuario($datos);
+	 echo $usuarioObj->agregarUsuario($datos);
 	
 
 

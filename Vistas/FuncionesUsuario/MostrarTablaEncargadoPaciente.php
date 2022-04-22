@@ -50,7 +50,7 @@ include "../header.php";
 
 		$(document).ready(function(){
 			
-			$('#tablaPaciente').load("../tablas/tablaAntropometria.php");
+			$('#tablaPaciente').load("../tablas/tablaEncargadoPaciente.php");
 			
 
 			// $('#btnGuardarCita').click(function(){

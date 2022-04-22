@@ -33,8 +33,8 @@ include "../header.php";
 			<div class="col-sm-8">
 				<form id="frmRegistro" method="post" onsubmit="return Registrar()" 
 				autocomplete="off">
-        <label>DPI DEL PACIENTE</label>
-					<input type="text" name="DpiPaciente" id="DpiPaciente" class="form-control" required="">
+        <label>ID DEL PACIENTE</label>
+					<input type="text" name="DPI" id="DPI" class="form-control" required="">
           <label>Nombre DE Encargado</label>
 					<input type="text" name="NombreEP" id="NombresenEP" class="form-control" required="">
 					<label>Apellidos DE Encargado</label>

@@ -10,125 +10,7 @@ include "../header.php";
 
 
 <div id="layoutSidenav_content">
-<!-- <h1 style="margin-left: 25%;">Información del Paciente</h1>
-               
-<div class="container" id="contenedor1" class="col-sm-12" style="margin-left: 25%;">
-          -->
-      <!-- <form  method="POST" onsubmit=" return Registrar()" id="frmRegistrar"  class="row gx-3 gy-2 align-items-center" >
-     -->
- <!-- fila dos -->
 
- <!-- <div class="row mb-3">
-<div class="col-sm-6">
-    <label class="visually-hidden" for="specificSizeInputGroupUsername">Username</label>
-    <div class="input-group">
-      <div class="input-group-text" class="col-sm-3">Nombre</div>
-      <input  type="text"  id="nombre" class="form-control" id="specificSizeInputGroupUsername" >
-    </div>
-  </div> -->
-  <!-- <div class="row mb-3" style="margin-top: 10px;">
-  <div class="col-sm-6">
-  <label class="visually-hidden" for="specificSizeInputGroupUsername">Username</label>
-    <div class="input-group">
-      <div class="input-group-text" class="col-sm-3">Apellidos</div>
-      <input type="text" id="apellidos" class="form-control" id="specificSizeInputGroupUsername" >
-    </div>
-  </div>
- </div>
- 
- <div class="row mb-3" style="margin-top: 10px;">
-  <div class="col-sm-6">
-  <label class="visually-hidden" for="specificSizeInputGroupUsername">Username</label>
-    <div class="input-group">
-      <div class="input-group-text" class="col-sm-3">Fecha De Nacimiento</div>
-      <input type="date" id="fechaNac" class="form-control" id="specificSizeInputGroupUsername" >
-    </div>
-  </div>
- </div>
- 
-  <div class="row mb-3">
-  <div class="col-sm-6">
-    <label class="visually-hidden" for="specificSizeSelect">AREA</label>
-    <select class="form-select" id="genero" id="specificSizeSelect" required="">
-      <option selected>Seleccionar Género</option>
-      <option value="1">Masculino</option>
-      <option value="2">Femenino</option>
-    </select>
-  </div>
-  </div>
-  <div class="row mb-3">
-  <div class="col-sm-6">
-    <label class="visually-hidden" for="specificSizeSelect">Etnia</label>
-    <select class="form-select" id="etnia" id="specificSizeSelect" required="">
-      <option selected>Etnia</option>
-      <option value="1">Ladino</option>
-      <option value="2">Xinca</option>
-      <option value="3">Maya</option>
-      <option value="4">Garifuna</option>
-      
-    </select>
-  </div>
-  </div> -->
-  <!-- <div class="row mb-3" style="margin-top: 10px;"> -->
-
-
-  <!-- <h1 style="margin-top: 100px;">Informacioón de Los Padres</h1>
-
-  <div class="row mb-3" style="margin-top: 10px;">
-<div class="col-sm-6">
-    <label class="visually-hidden" for="specificSizeInputGroupUsername">Username</label>
-    <div class="input-group">
-      <div class="input-group-text" class="col-sm-3">Nombre del Padre</div>
-      <input type="text" class="form-control" id="specificSizeInputGroupUsername">
-    </div>
-  </div>
-  <div class="row mb-3" style="margin-top: 10px;">
-<div class="col-sm-6">
-    <label class="visually-hidden" for="specificSizeInputGroupUsername">Username</label>
-    <div class="input-group">
-      <div class="input-group-text" class="col-sm-3">Apellidos</div>
-      <input type="text" class="form-control" id="specificSizeInputGroupUsername">
-    </div>
-  </div>
-  <div class="row mb-3" style="margin-top: 10px;">
-<div class="col-sm-6">
-    <label class="visually-hidden" for="specificSizeInputGroupUsername">Username</label>
-    <div class="input-group">
-      <div class="input-group-text" class="col-sm-3">Nombre De La Madre</div>
-      <input type="text" class="form-control" id="specificSizeInputGroupUsername">
-    </div>
-  </div>
-  <div class="row mb-3" style="margin-top: 10px;">
-<div class="col-sm-6">
-    <label class="visually-hidden" for="specificSizeInputGroupUsername">Username</label>
-    <div class="input-group">
-      <div class="input-group-text" class="col-sm-3">Apellidos</div>
-      <input type="text" class="form-control" id="specificSizeInputGroupUsername">
-    </div>
-  </div>
-  <div class="row mb-3" style="margin-top: 10px;">
-<div class="col-sm-6">
-    <label class="visually-hidden" for="specificSizeInputGroupUsername">Username</label>
-    <div class="input-group">
-      <div class="input-group-text" class="col-sm-3">Dirección</div>
-      <input type="text" class="form-control" id="specificSizeInputGroupUsername">
-    </div>
-  </div> -->
-
-  <!-- <div class="row mb-3" style="margin-top: 10px;">
-
-<div class="col-auto">
-    <button type="button" class="btn btn-warning">Cancelar</button>
-  </div>
-  <div class="col-auto">
-    <button type="submit" class="btn btn-warning">Guardar</button>
-  </div>
-  
-  </div>
-</form>
- 
-</div>
-</div> -->
 
 <div class="container"style="  border-radius: 30px 30px 30px 30px;  opacity: 0.85; ">
 
@@ -172,8 +54,8 @@ include "../header.php";
 					<br> -->
           <select class="form-select" id="estado" name="estado" id="specificSizeSelect" required="">
 
-      <option value="Ladino">Activo</option>
-      <option value="Xinca">INACTIVO</option>
+      <option value="Activo">Activo</option>
+      <option value="Inactivo">INACTIVO</option>
      
       
     </select>

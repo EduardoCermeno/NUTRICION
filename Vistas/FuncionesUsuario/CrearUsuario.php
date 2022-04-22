@@ -10,8 +10,8 @@ include "../header.php";
 <div id="layoutSidenav_content">
 
 			
-			<div class="col-sm-8" style="margin-left: 5%;" >
-			<div class="row justify-conten-center" style="padding-top: 15%; ">
+			
+			<div class="row justify-conten-center" style="padding-bottom: 15%; ">
 <div class="container"  style="background-color:#F0F3F4   ; border-radius: 30px 30px 30px 30px;  opacity: 0.85; ">
 
 		<h3 style="text-align: center;">Registro de usuario</h3>
@@ -75,7 +75,7 @@ include "../header.php";
 	</div>
 	</div>
 
-</div></div>
+</div>
 	<!-- <script src="librerias/jquery-3.4.1.min.js"></script> -->
 	<!-- <script src="librerias/jquery-ui-1.12.1/jquery-ui.js"></script>
 	<script src="librerias/sweetalert.min.js"></script> -->

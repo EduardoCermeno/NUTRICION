@@ -17,12 +17,13 @@ $Conexion=$conexion->Conexion();
 	<table class="table table-hover table-dark" id="tablapacientes">
 		<thead>
 			<tr style="text-align: center;">
-				<td>Codigo</td>
-				<td>Nombres</td>
-				<td>Apellidos</td>
+				<td>Id_Paciente</td>
+				<td>DPI</td>
+				<td>Nombre</td>
                 <td>Fecha Nacimiento</td>
                 <td>Genero</td>
-                <td>Etnia</td>
+                <td>ESTADO</td>
+				<td>ENCARGADO</td>
 				<!-- <td>editar</td> -->
 				<td>Eliminar</td>
 			</tr>
@@ -31,14 +32,16 @@ $Conexion=$conexion->Conexion();
 
 		<?php
 			$sql = "SELECT 
-			Id_Paciente,
-            CodigoPaciente, 
-            Nombre_Paciente, 
-            Apellido_Paciente, 
-            FechaNacimiento_Paciente, 
-            Género_Paciente, 
-            Etnia_Paciente
-					FROM tb_Paciente"; 
+			P.Id_Paciente,
+            P.Dpi, 
+            P.Nombre_Paciente, 
+            P.Apellido_Paciente, 
+            P.FechaNacimiento_Paciente, 
+			P.Genero_Paciente,
+            P.EstadoPaciente,
+			EP.Nombre_EncargadoPaciente
+          
+			FROM tb_paciente AS P INNER JOIN tb_encargadopaciente AS EP WHERE P.Id_Paciente =EP.Id_Paciente"; 
 			$result = mysqli_query($Conexion, $sql);
 
 			while($mostrar = mysqli_fetch_array($result)){ 
@@ -47,12 +50,13 @@ $Conexion=$conexion->Conexion();
 				
 		?>
 			 <tr style="text-align: center;">
-				<td><?php echo  $mostrar['CodigoPaciente'];?></td>
-				<td><?php echo  $mostrar['Nombre_Paciente'];?></td>
-				<td><?php echo $mostrar['Apellido_Paciente']; ?></td>
+				<td><?php echo  $mostrar['Id_Paciente'];?></td>
+				<td><?php echo  $mostrar['Dpi'];?></td>
+				<td><?php echo $mostrar['Nombre_Paciente']." ".$mostrar['Apellido_Paciente']; ?></td>
                 <td><?php echo $mostrar['FechaNacimiento_Paciente']; ?></td>
-                <td><?php echo $mostrar['Género_Paciente']; ?></td>
-                <td><?php echo $mostrar['Etnia_Paciente']; ?></td>
+                <td><?php echo $mostrar['Genero_Paciente']; ?></td>
+                <td><?php echo $mostrar['EstadoPaciente']; ?></td>
+				<td><?php echo $mostrar['Nombre_EncargadoPaciente']; ?></td>
 				
 				
 				<!-- <td>

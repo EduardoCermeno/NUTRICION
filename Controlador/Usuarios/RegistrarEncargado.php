@@ -8,7 +8,7 @@ $datos = array(
     
 	
 
-"DpiPaciente" =>$_POST['DpiPaciente'],
+"DpiPaciente" =>$_POST['DPI'],
 "NombreEP" => $_POST['NombreEP'],
 "ApellidosEP"=>$_POST['ApellidosEP'],
 "TelefonoEP" => $_POST['TelefonoEP'],
@@ -17,9 +17,9 @@ $datos = array(
 
 );
 
-	 $PadresObj = new Padres();
+	 $EncargadoObj = new Padres();
 
-	echo  $PadresObj->agregarEncargadoPaciente($datos);
+	echo  $EncargadoObj->agregarEncargadoPaciente($datos);
 	
 
 

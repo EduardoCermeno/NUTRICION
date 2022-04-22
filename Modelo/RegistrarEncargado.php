@@ -8,8 +8,8 @@ class Padres extends Conectar{
 		public function agregarEncargadoPaciente($datos) {
 			$conexion = Conectar::conexion();
 				
-			
-				$sql = "SELECT Dpi
+		
+				$sql = "SELECT Id_Paciente
 				FROM tb_paciente
 				WHERE Dpi = '$datos[DpiPaciente]'";
    $result = mysqli_query($conexion, $sql);
@@ -22,7 +22,7 @@ class Padres extends Conectar{
 	 	}else{
 	 	
 
-		 $sql = "INSERT INTO tb_encargadopaciente ( Dpi,
+		 $sql = "INSERT INTO tb_encargadopaciente ( Id_Paciente,
 		 										 Nombre_EncargadoPaciente, 
 												 Apellido_EncargadoPaciente, 
 												 Telefono_EncargadoPaciente,
@@ -32,7 +32,7 @@ class Padres extends Conectar{
                           
 			$query = $conexion->prepare($sql);
          
-			$query->bind_param("isssss", 	$datos['DpiPaciente'],
+			$query->bind_param("isssss", 	$datosResultado['Id_Paciente'],
 											$datos['NombreEP'],
 											$datos['ApellidosEP'],
 											$datos['TelefonoEP'],

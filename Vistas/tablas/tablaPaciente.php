@@ -18,7 +18,7 @@ $Conexion=$conexion->Conexion();
 		<thead>
 			<tr style="text-align: center;">
 				<td>Id_Paciente</td>
-				<td>DPI</td>
+				<td>CUI</td>
 				<td>Nombre</td>
                 <td>Fecha Nacimiento</td>
                 <td>Genero</td>

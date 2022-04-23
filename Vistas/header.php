@@ -12,7 +12,7 @@
 
         <link href="../../Css/styles.css" rel="stylesheet" />
       
-        <link href="../../Css/calculadora.css" rel="stylesheet" />
+        <link href="../../Css/medicamento.css" rel="stylesheet" />
        
         <!-- <link href="../../Css/logn.css" rel="stylesheet" /> -->
         <!-- <link href="../../Css/Programarcita.css" rel="stylesheet" /> -->
@@ -79,7 +79,7 @@
                             
                             <a class="nav-link" href="../FuncionesUsuario/RegistrarPadres.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-street-view" ></i></div>
-                               Registrar Padres
+                               Registrar Encargado Paciente
                             </a>
                           
                             <a class="nav-link" href="../FuncionesUsuario/calculadora.php">
@@ -96,6 +96,11 @@
                             <a class="nav-link" href="../FuncionesUsuario/CrearUsuario.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-plus-circle"></i></div>
                             Crear Usuario
+                            </a>
+                            
+                            <a class="nav-link" href="../FuncionesUsuario/CrearMedicamento.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-capsules"></i></div>
+                            Registrar Medicamento
                             </a>
                             <a class="nav-link" href="../FuncionesUsuario/MostrarTablaCItas.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>

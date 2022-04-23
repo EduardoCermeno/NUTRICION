@@ -6,21 +6,56 @@ include "../header.php";
 
 
 ?>
-
-
-
 <div id="layoutSidenav_content">
+<div class="container-fluid px-4">
+<form id="msform" onsubmit=" return Registrar()">
+  
+  <!-- fieldsets -->
+  <fieldset>
+    <h2 class="fs-title">CREAR ENCARGADO</h2>
+    
+					<input type="text" name="DPI" id="DPI" class="form-control" placeholder="CUI" required="">
+          
+					<input type="text" name="NombreEP" id="NombresenEP" class="form-control" placeholder="Nombre de Encargado" required="">
+				
+					<input type="text" name="ApellidosEP" id="ApellidoEP" class="form-control" placeholder="Apellidos de Encargado" required="">
+					
+					<input type="text" name="TelefonoEP" id="TelefonoEP" class="form-control" placeholder="Teléfono" required="" >
+					
+					<input type="email" name="CorreoEP" id="CorreoEP" class="form-control" placeholder="Correo" required="">
+       
+					<input type="text" name="DirecciónEP" id="DirecciónEP" class="form-control" placeholder="Dirección" required="">
+                    
+    <input type="submit"  class="previous action-button" value="Crear" />
+    <input type="reset"  class="previous action-button" value="CANCELAR" />
+    
+  </fieldset>
+ 
 
-<div class="container">
+</form>
+  </div>
+  </div>
 
-<div class="row  justify-conten-center">
-      <div class="col-sm-12">
-</div>
-		    	<div class="col-sm-12">
-        <div   class="alert alert-primary" role="alert" >
-<H3 style="text-align:center; font-family: Serif; color: blac">REGISTRAR PADRES DEL PACIENTE</H3>
-</div>
-</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 		
 
@@ -28,45 +63,10 @@ include "../header.php";
 
 
 
-		<div class="row" style="margin-left: 20%;">
-
-			<div class="col-sm-8">
-				<form id="frmRegistro" method="post" onsubmit="return Registrar()" 
-				autocomplete="off">
-        <label>ID DEL PACIENTE</label>
-					<input type="text" name="DPI" id="DPI" class="form-control" required="">
-          <label>Nombre DE Encargado</label>
-					<input type="text" name="NombreEP" id="NombresenEP" class="form-control" required="">
-					<label>Apellidos DE Encargado</label>
-					<input type="text" name="ApellidosEP" id="ApellidoEP" class="form-control" required="">
-					<label>Teléfono</label>
-					<input type="text" name="TelefonoEP" id="TelefonoEP" class="form-control" required="" >
-					<label>Correo</label>
-					<input type="email" name="CorreoEP" id="CorreoEP" class="form-control" required="">
-                    <label>Dirección</label>
-					<input type="text" name="DirecciónEP" id="DirecciónEP" class="form-control" required="">
-                    
-			
-          
-					<div class="row" style="padding-top: 20px;">
-						<div class="col-sm-6 text-left" >
-							<button type="submit" class="btn btn-warning">Registrar</button>
-						</div>
-            
-            <div class="col-sm-6 text-left" >
-							<button type="button" onclick="Limpiar()" class="btn btn-danger">Cancelar</button>
-						</div>
-					</div>
-				</form>
-			</div>
-			<div class="col-sm-4"></div>
-		</div>
-	</div>
+		
 
 
-
-                </div>
-            </div>
+              
             <script src="../../Librerias/jquery-3.6.0.min.js"></script>
            
       
@@ -75,7 +75,7 @@ include "../header.php";
    function Registrar(){
         $.ajax({
             method:"POST",
-            data:$('#frmRegistro').serialize(),
+            data:$('#msform').serialize(),
             url:"../../Controlador/Usuarios/RegistrarEncargado.php",
             success:function(respuesta) {
                
@@ -83,7 +83,7 @@ include "../header.php";
          alert(respuesta);
 
               if (respuesta == 1) {
-                $("#frmRegistro")[0].reset();
+                $("#msform")[0].reset();
                 swal(":D", "Agregado con exito!", "success");
                 setTimeout('enlazar()',3000);
               } else if(respuesta == 2){
@@ -100,7 +100,7 @@ include "../header.php";
 
  <script>
    function Limpiar(){
-    $("#frmRegistro")[0].reset();
+    $("#msform")[0].reset();
 
    }
  </script>
@@ -108,7 +108,7 @@ include "../header.php";
 <script>
    function enlazar(){
    
-    window.location.href='calculadora.php'  
+    window.location.href='CrearMedicamento.php'  
 
    }
  </script>

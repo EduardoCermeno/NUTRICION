@@ -6,27 +6,30 @@ include "../header.php";
 
 
 ?>
+
 <div id="layoutSidenav_content">
+<div class="container-fluid px-4">
 <form id="msform" onsubmit=" return agregarMedicamento()">
   
   <!-- fieldsets -->
   <fieldset>
     <h2 class="fs-title">CREAR MEDICAMENTO</h2>
     <h3 class="fs-subtitle">medicamentos que consumen los pacientes </h3>
-    <input type="text" name="IDPACIENTE" id="IDPACIENTE" placeholder="Id del paciente" />
-    <input type="text" name="Nmediacmento" id="Nmediacmento"  placeholder="Nombre del Medicamento" />
-    <input type="text" name="TMedicamento" id="TMedicamento" placeholder="Tipo DE Medicamento" />
+    <input type="text" name="IDPACIENTE" id="IDPACIENTE" placeholder="Id del paciente" required="" />
+    <input type="text" name="Nmediacmento" id="Nmediacmento"  placeholder="Nombre del Medicamento" required=""/>
+    <input type="text" name="TMedicamento" id="TMedicamento" placeholder="Tipo DE Medicamento" required=""/>
     <input type="text" name="DosisM" id="DosisM" placeholder="Dosis" />
-    <input type="textarea" name="DMedicamento" id="DDMedicamentoosisM" placeholder="Descripcion" />
-    <input type="text" name="APMedicamento" id="DAPMedicamentoosisM" placeholder="Aplica Medicamento" />
+    <input type="textarea" name="DMedicamento" id="DDMedicamentoosisM" placeholder="Descripcion" required="" />
+    <input type="text" name="APMedicamento" id="DAPMedicamentoosisM" placeholder="Aplica Medicamento" required="" />
     <input type="time" name="HMedicamento" id="HMedicamento" placeholder="Horario" />
     <input type="submit"  class="previous action-button" value="Crear" />
-    <input type="reset"  class="previous action-button" value="Crear" />
+    <input type="reset"  class="previous action-button" value="CANCELAR" />
     
   </fieldset>
  
 
 </form>
+  </div>
   </div>
 
   <script src="../../Librerias/jquery-3.6.0.min.js"></script>

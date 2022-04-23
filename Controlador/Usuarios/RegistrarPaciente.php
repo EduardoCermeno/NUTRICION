@@ -1,7 +1,7 @@
 <?php
 	session_start();
  require_once '../../Modelo/RegistrarPaciente.php';
-$codigo=$_POST['dpi'];
+
 
 $sexo='';
  if($_POST['genero']==1){
@@ -21,7 +21,7 @@ $datos = array(
 "genero" =>$sexo,
 "estado" => $_POST['estado'],
 );
- 
+
 	 $usuarioObj = new Usuario();
 
 	 echo $usuarioObj->agregarUsuario($datos);

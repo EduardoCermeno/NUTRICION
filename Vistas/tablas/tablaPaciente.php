@@ -17,21 +17,22 @@ $Conexion=$conexion->Conexion();
 	<table class="table table-hover table-dark" id="tablapacientes">
 		<thead>
 			<tr style="text-align: center;">
-				<td>Id_Paciente</td>
+				
 				<td>CUI</td>
 				<td>Nombre</td>
                 <td>Fecha Nacimiento</td>
                 <td>Genero</td>
                 <td>ESTADO</td>
 				<td>ENCARGADO</td>
-				<!-- <td>editar</td> -->
+				<td>Medicamento</td>
+				 <td>editar</td> 
 				<td>Eliminar</td>
 			</tr>
 		</thead>
 		<tbody>
 
 		<?php
-			$sql = "SELECT 
+			$sql = " SELECT 
 			P.Id_Paciente,
             P.Dpi, 
             P.Nombre_Paciente, 
@@ -39,9 +40,11 @@ $Conexion=$conexion->Conexion();
             P.FechaNacimiento_Paciente, 
 			P.Genero_Paciente,
             P.EstadoPaciente,
-			EP.Nombre_EncargadoPaciente
+			EP.Nombre_EncargadoPaciente,
+            M.Nombre_Medicamento
+			
           
-			FROM tb_paciente AS P INNER JOIN tb_encargadopaciente AS EP WHERE P.Id_Paciente =EP.Id_Paciente"; 
+			FROM tb_paciente AS P INNER JOIN tb_encargadopaciente AS EP on P.Id_Paciente =EP.Id_EncargadoPaciente INNER JOIN tb_medicamento AS M on P.Id_Paciente=M.Id_Medicamento"; 
 			$result = mysqli_query($Conexion, $sql);
 
 			while($mostrar = mysqli_fetch_array($result)){ 
@@ -50,27 +53,27 @@ $Conexion=$conexion->Conexion();
 				
 		?>
 			 <tr style="text-align: center;">
-				<td><?php echo  $mostrar['Id_Paciente'];?></td>
+				
 				<td><?php echo  $mostrar['Dpi'];?></td>
 				<td><?php echo $mostrar['Nombre_Paciente']." ".$mostrar['Apellido_Paciente']; ?></td>
                 <td><?php echo $mostrar['FechaNacimiento_Paciente']; ?></td>
                 <td><?php echo $mostrar['Genero_Paciente']; ?></td>
                 <td><?php echo $mostrar['EstadoPaciente']; ?></td>
 				<td><?php echo $mostrar['Nombre_EncargadoPaciente']; ?></td>
+				<td><?php echo  $mostrar['Nombre_Medicamento'];?></td>
 				
 				
-				<!-- <td>
-					<span class="btn btn-warning btn-sm" 
-						
-						data-toggle="modal" data-target="#modalActualizarCita">
-						
-						<span class="fas fa-edit"
-					 >
-						
-						
-						</span>
+				<td>
+
+				<span class="btn btn-warning btn-sm " data-toggle="modal" data-target="#modalActualizaPaciente"
+							 >
+							
+						<span class="fas fa-edit"></span>
 					</span>
-				</td> -->
+					
+				</td>
+			
+
 				<td>
 
 				<span class="btn btn-danger btn-sm" 
@@ -92,10 +95,76 @@ $Conexion=$conexion->Conexion();
 </div>
 
 
-<!-- 
-            <script src="../../Js/Usuario/OperacionesPaciente.js"></script> -->
-			<!-- <script src="../../Librerias/jquery-3.6.0.min.js"></script> -->
-<!-- <script src="../../Librerias/datatable/jquery.dataTables.min.js"></script> -->
+<div class="modal fade" id="modalActualizaPaciente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar 	Paciente </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="actualizandousuario" method="POST" autocomplete="off">
+ 
+				<div class="row">
+				<input type="text" name="idusuario" id="idusuario" hidden="">
+					
+					<label> Nombre</label>
+					<input type="text" name="nombres" id="nombres" class="form-control" required="">
+					<br>
+					<label >Apellidos</label>
+					<input type="text" name="Apellido" id="Apellido" class="form-control" required="">
+					<br>
+					<label>Fecha de nacimiento</label>
+					<input  type="date" name="fechaNac" id="fechaNac"  class="form-control"  required="" >
+					<br>
+					<label >Género</label>
+					<select class="form-select" id="genero" name="genero"  id="specificSizeSelect">
+								<option selected>Seleccionar Género</option>
+								<option value="Masculino">Masculino</option>
+								<option value="Femenino" >Femenino</option>
+								
+					</select>
+					<br>
+					<br>
+					<label >Estado de Paciente</label>
+					<select class="form-select" id="estado" name="estado"  id="specificSizeSelect">
+								<option selected>Seleccionar Estado</option>
+								<option value="Activo">Activo</option>
+								<option value="Inactivo" >Inactivo</option>
+								
+					</select>
+
+					
+					<br>
+      
+				
+        </form>
+      </div>
+	
+      <div class="modal-footer">
+	  <button type="button"  class="btn btn-danger" id="modificausuario" data-dismiss="modal">Actualizar</button>
+       
+        <button type="button" onclick="cancelar()" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+       
+      </div>
+<!--  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

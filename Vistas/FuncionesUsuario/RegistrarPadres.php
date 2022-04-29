@@ -7,7 +7,7 @@ include "../header.php";
 
 ?>
 <div id="layoutSidenav_content">
-<div class="container-fluid px-4">
+
 <form id="msform" onsubmit=" return Registrar()">
   
   <!-- fieldsets -->
@@ -34,7 +34,7 @@ include "../header.php";
 
 </form>
   </div>
-  </div>
+
 
 
 

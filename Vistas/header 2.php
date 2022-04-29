@@ -17,7 +17,7 @@
 
         <link href="../../Css/styles.css" rel="stylesheet" />
       
-        <link href="../../Css/calculadora.css" rel="stylesheet" />
+       
        
         <!-- <link href="../../Css/logn.css" rel="stylesheet" /> -->
         <!-- <link href="../../Css/Programarcita.css" rel="stylesheet" /> -->
@@ -76,10 +76,7 @@
                             
                             
                           
-                            <a class="nav-link" href="../FuncionesUsuario/calculadora.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-calculator"></i></div>
-                                Calculadora Antropometrica
-                            </a>
+                           
                             
                           
                             

@@ -29,7 +29,7 @@ include "../header.php";
 		    <hr>
 		   	<div class="row">
 		   		<div class="col-sm-12">
-		   			 <div id="tablaCitasreservada" ></div> 
+		   			 <div id="tablaMedicamentos" ></div> 
 					
 		   		</div>
 		   	</div>
@@ -55,7 +55,7 @@ include "../header.php";
 
 		$(document).ready(function(){
 			
-			$('#tablaCitasreservada').load("../tablas/tablaCitasReservada");
+			$('#tablaMedicamentos').load("../tablas/tablaMedicamentos");
 			
 
 			$('#btnGuardarCita').click(function(){

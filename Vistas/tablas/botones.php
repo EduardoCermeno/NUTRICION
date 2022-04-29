@@ -9,7 +9,7 @@
 </div></div>
 
 <a href="MostrarTablaCitas.php"><input type="button" class="btn btn-primary" value="Citas Disponibles"></a>
-<a href="MostrarTablaCitasReservada.php"><input type="button" class="btn btn-success" value="Citas Reservadas"></a>
+<a href="MostrarTablaMedicamentos.php"><input type="button" class="btn btn-success" value="Medicamentos"></a>
 <a href="MostrarTablaPaciente.php"><input type="button" class="btn btn btn-danger" value="Pacientes"></a>
 <a href="MostrarTablaEncargadoPaciente.php"><input type="button" class="btn btn-warning" value="ENCARGADOS DE PACIENTES"></a>
 <a href="MostrarTablaUsuarios.php"><input type="button" class="btn btn-info" value="USUARIOS"></a>

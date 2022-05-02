@@ -134,10 +134,6 @@ $Conexion=$conexion->Conexion();
         <button type="button" onclick="cancelar()" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
        
       </div>
-<!--  -->
-
-            <script src="../../Js/AgregarCita.js"></script>
-<!-- <script src="../../Librerias/datatable/jquery.dataTables.min.js"></script> -->
 
 <script type="text/javascript">
 		$(document).ready(function(){
@@ -244,7 +240,7 @@ function actualizausuario(){
 					if(respuesta==1){
 						$('#tablaUsuarios').DataTable();
 						swal(":d", "Usuario Actualizado", "success");
-						
+					
 						
 					}else{
 						swal(":(", "fallo al actualizar", "error")

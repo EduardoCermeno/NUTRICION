@@ -66,7 +66,7 @@ $Conexion=$conexion->Conexion();
 				<td>
 
 				<span class="btn btn-warning btn-sm " data-toggle="modal" data-target="#modalActualizaPaciente"
-							 >
+				onclick="	ObtenerdatosPaciente('<?php echo $mostrar['Id_Paciente']?>') " >
 							
 						<span class="fas fa-edit"></span>
 					</span>
@@ -105,16 +105,18 @@ $Conexion=$conexion->Conexion();
         </button>
       </div>
       <div class="modal-body">
-        <form id="actualizandousuario" method="POST" autocomplete="off">
+        <form id="actualizandopaciente" method="POST" autocomplete="off">
  
 				<div class="row">
-				<input type="text" name="idusuario" id="idusuario" hidden="">
+				<input type="text" name="idpaciente" id="idpaciente" hidden="">
+				<label> CUI</label>
+					<input type="text" name="cui" id="cui" class="form-control" required="">
 					
 					<label> Nombre</label>
 					<input type="text" name="nombres" id="nombres" class="form-control" required="">
 					<br>
 					<label >Apellidos</label>
-					<input type="text" name="Apellido" id="Apellido" class="form-control" required="">
+					<input type="text" name="apellidos" id="apellidos" class="form-control" required="">
 					<br>
 					<label>Fecha de nacimiento</label>
 					<input  type="date" name="fechaNac" id="fechaNac"  class="form-control"  required="" >
@@ -126,25 +128,30 @@ $Conexion=$conexion->Conexion();
 								<option value="Femenino" >Femenino</option>
 								
 					</select>
-					<br>
-					<br>
-					<label >Estado de Paciente</label>
+					
+					<label >ESTADO</label>
 					<select class="form-select" id="estado" name="estado"  id="specificSizeSelect">
-								<option selected>Seleccionar Estado</option>
-								<option value="Activo">Activo</option>
-								<option value="Inactivo" >Inactivo</option>
+								<option selected>Seleccionar Género</option>
+								<option value="ACTIVO">ACTIVO</option>
+								<option value="INACTIVO" >INACTIVO</option>
 								
 					</select>
 
+				
 					
-					<br>
+					
+					
+				
+					
+					
+		
       
 				
         </form>
       </div>
 	
       <div class="modal-footer">
-	  <button type="button"  class="btn btn-danger" id="modificausuario" data-dismiss="modal">Actualizar</button>
+	  <button type="button"  class="btn btn-danger" id="modificapaciente" data-dismiss="modal">Actualizar</button>
        
         <button type="button" onclick="cancelar()" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
        
@@ -171,7 +178,10 @@ $Conexion=$conexion->Conexion();
 <script type="text/javascript">
 		$(document).ready(function(){
 			$('#tablapacientes').DataTable();
+			$('#modificapaciente').click(function(){
+				actualizapaciente();
 
+			});
 			// $('#modalEliminar').click(function(){
 			// 	eliminarPaciente();
 			// });
@@ -184,7 +194,62 @@ $Conexion=$conexion->Conexion();
 	
 
 
+
+	
+
 	<script>
+
+function ObtenerdatosPaciente(idPaciente){
+	IDPACIENTE=parseInt(idPaciente)
+		$.ajax({
+		   			type:"POST",
+		   			data:"IDPACIENTE=" + IDPACIENTE,
+		   			url:"../../Controlador/Usuarios/ActualizaPaciente.php",
+		   			success:function(respuesta){
+						alert(respuesta);
+					respuesta=jQuery.parseJSON(respuesta);
+					
+					$('#idpaciente').val(respuesta['idpaciente']);
+					$('#cui').val(respuesta['dpi']);
+					$('#nombres').val(respuesta['nombrespaciente']);
+					$('#apellidos').val(respuesta['apellidospaciente']);
+					$('#fechaNac').val(respuesta['fechanacimientopaciente']);
+					$('#genero').val(respuesta['generopaciente']);
+					$('#estado').val(respuesta['estadopaciente'])
+				
+		   				
+		   			}
+		   		});	 
+
+
+}
+
+
+function actualizapaciente(){
+	
+	$.ajax({
+				   type:"POST",
+				   data:$('#actualizandopaciente').serialize(),
+				   url:"../../Controlador/Usuarios/actualizainformacionPaciente.php",
+				   success:function(respuesta){
+					   alert(respuesta);
+				if(respuesta==1){
+					$('#tablaUsuarios').DataTable();
+					swal(":d", "Paciente Actualizado", "success");
+					$('#tablapacientes').load("../tablas/tablaPaciente");
+					
+				}else{
+					swal(":(", "fallo al actualizar", "error")
+
+				}
+				   
+				   }
+			   });	 
+
+
+
+
+}
 
 function eliminarPaciente(idpaciente) {
 	IDPACIENTE=parseInt(idpaciente)

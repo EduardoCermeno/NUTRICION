@@ -58,14 +58,9 @@ include "../header.php";
 			$('#tablaMedicamentos').load("../tablas/tablaMedicamentos");
 			
 
-			$('#btnGuardarCita').click(function(){
-				agregarCita()
-				
-			});
+			
 
-			// $('#btnActualizaCategoria').click(function(){
-			// 	actualizaCategoria();
-			// });
+		
 		});
 	</script>
 

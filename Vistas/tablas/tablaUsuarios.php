@@ -92,19 +92,17 @@ $Conexion=$conexion->Conexion();
       <div class="modal-body">
         <form id="actualizandousuario" method="POST" autocomplete="off">
  
-				<div class="row">
-				<div class="col-sm-6">
+				
 					<label>Nombre persona</label>
 					<input type="text" name="nombre" id="nombre" class="form-control"  required="">
-					</div>
+
 				
-					<div class="col-sm-6">
+					
 					<input type="text" name="idusuario" id="idusuario" hidden="">
 					
 					<label>Apellidos</label>
 					<input type="text" name="apellidos" id="apellidos" class="form-control" required="">
-					</div>
-					</div>
+					
 					<label>Fecha de nacimiento</label>
 					<input  type="date" name="fechaNacimiento" id="fechaNacimiento"  class="form-control"  required="" >
 					
@@ -112,8 +110,6 @@ $Conexion=$conexion->Conexion();
 					<input type="text" name="usuario" id="usuario" class="form-control" required="">
 					<label>Ingresar Contraseñia</label>
 					<input type="password" name="password" id="password" class="form-control" required="">
-					<label>Confirmar Contraseña</label>
-					<input type="password" name="password1" alt="strongPass" onclick="Limpiar()" id="password1" class="form-control" required="">
 					<label>Usuarios</label>
 					<select class="form-select" id="RolUsuario" name="RolUsuario"  id="specificSizeSelect">
 								<option selected>Seleccionar Rol</option>
@@ -182,7 +178,9 @@ function eliminarUsuario(idUsuario) {
 		   					swal("Eliminado con exito!", {
 								
 		      					icon: "success",
+								  
 		    				});
+							$('#tablaUsuarios').load("../tablas/tablaUsuarios");
 						
 		   				} else {
 							
@@ -240,7 +238,9 @@ function actualizausuario(){
 					if(respuesta==1){
 						$('#tablaUsuarios').DataTable();
 						swal(":d", "Usuario Actualizado", "success");
+						
 					
+					$('#tablaUsuarios').load("../tablas/tablaUsuarios");
 						
 					}else{
 						swal(":(", "fallo al actualizar", "error")

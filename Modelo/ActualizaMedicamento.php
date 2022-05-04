@@ -7,7 +7,7 @@ class actualizamedicamento extends Conectar{
        
         $conexion = Conectar::conexion();
 
-	$sql = "select 
+	$sql = "SELECT 
         
                 Id_Medicamento, 
                 Nombre_Medicamento,
@@ -32,7 +32,7 @@ class actualizamedicamento extends Conectar{
 		
 	);
 
-return $datos;
+return 5;
     }
 
 

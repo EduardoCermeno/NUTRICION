@@ -21,6 +21,7 @@ $Conexion=$conexion->Conexion();
 				<td>NombreMedicamento</td>
 				<td>Tipo</td>
 				<td>Dosis</td>
+				
 				<td>Hora</td>
 				<td>Descripcion</td>
 				<td>Aplicacion</td>
@@ -119,7 +120,7 @@ $Conexion=$conexion->Conexion();
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Editar Usuario </h5>
+        <h5 class="modal-title" id="exampleModalLabel">Editar Medicamento </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -141,7 +142,7 @@ $Conexion=$conexion->Conexion();
 					<input type="text" name="DosisM" id="DosisM" class="form-control" required="">
 					
 					<label>Descripcion</label>
-					<input type="textarea" name="DMedicamento" id="DMedicamento" class="form-control" required="">
+					<input type="text" name="DMedicamento" id="DMedicamento" class="form-control" required="">
 					
 					<label>Aplica Medicamento</label>
 					<select name="APMedicamento" id="APMedicamento" class="form-control" required="">
@@ -204,8 +205,9 @@ function obtenermedicamento(idmedicamento){
 					$('#TMedicamento').val(respuesta['TMedicamento']);
 					$('#DosisM').val(respuesta['DosisM']);
 					$('#DMedicamento').val(respuesta['DMedicamento']);
-					$('#APMedicamento').val(respuesta['APMedicamento']);
-					$('#HMedicamento').val(respuesta['HMedicamento'])
+					$('#HMedicamento').val(respuesta['HMedicamento']);
+					$('#APMedicamento').val(respuesta['APMedicamento'])
+					
 				
 		   				
 		   			}
@@ -226,7 +228,7 @@ function actualizamedicamento(){
 					   alert(respuesta);
 				if(respuesta==1){
 					$('#tablaUsuarios').DataTable();
-					swal(":d", "Paciente Actualizado", "success");
+					swal(":d", "Medicamento Actualizado", "success");
 					$('#tablmedicamentos').load("../tablas/tablaMedicamentos");
 					
 				}else{

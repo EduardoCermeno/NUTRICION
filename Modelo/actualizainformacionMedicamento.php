@@ -20,8 +20,8 @@ $query->bind_param("ssssssi",
                             $datos['Nmediacmento'],
                             $datos['TMedicamento'],
                             $datos['DosisM'],
-                            $datos['DMedicamento'],
                             $datos['HMedicamento'],
+                            $datos['DMedicamento'],
                             $datos['APMedicamento'],
                             $datos['idmedicamento']);
                                       

@@ -8,7 +8,7 @@ include "../header.php";
 ?>
 
 <div id="layoutSidenav_content">
-<div class="container-fluid px-4">
+
 <form id="msform" onsubmit=" return agregarMedicamento()">
   
   <!-- fieldsets -->
@@ -19,8 +19,13 @@ include "../header.php";
     <input type="text" name="Nmediacmento" id="Nmediacmento"  placeholder="Nombre del Medicamento" required=""/>
     <input type="text" name="TMedicamento" id="TMedicamento" placeholder="Tipo DE Medicamento" required=""/>
     <input type="text" name="DosisM" id="DosisM" placeholder="Dosis" />
-    <input type="textarea" name="DMedicamento" id="DDMedicamentoosisM" placeholder="Descripcion" required="" />
-    <input type="text" name="APMedicamento" id="DAPMedicamentoosisM" placeholder="Aplica Medicamento" required="" />
+    <input type="textarea" name="DMedicamento" id="DDMedicamentoosisM" id="specificSizeSelect" placeholder="Descripcion" required="" />
+    <select class="form-select" style="Height:50px;" name="APMedicamento" id="DAPMedicamentoosisM" placeholder="Aplica Medicamento" required="" >
+    <option value="si">si</option>
+    <option value="no">no</option>
+   
+  </select>
+  <br>
     <input type="time" name="HMedicamento" id="HMedicamento" placeholder="Horario" />
     <input type="submit"  class="previous action-button" value="Crear" />
     <input type="reset"  class="previous action-button" value="CANCELAR" />
@@ -30,9 +35,10 @@ include "../header.php";
 
 </form>
   </div>
-  </div>
+ 
+ 
 
-  <script src="../../Librerias/jquery-3.6.0.min.js"></script>
+  
 
   <script>
 

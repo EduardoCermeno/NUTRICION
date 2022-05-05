@@ -14,7 +14,7 @@ include "../header.php";
   <fieldset>
     <h2 class="fs-title">CREAR ENCARGADO</h2>
     
-					<input type="text" name="DPI" id="DPI" class="form-control" placeholder="CUI" required="">
+					<input type="text" name="DPI" id="DPI" class="form-control" placeholder="CUI Del Paciente" required="">
           
 					<input type="text" name="NombreEP" id="NombresenEP" class="form-control" placeholder="Nombre de Encargado" required="">
 				

@@ -1,5 +1,5 @@
 <?php
-require_once 'Conexion';
+require_once 'Conexion.php';
  
 class actualizaencargado extends Conectar{
 
@@ -26,7 +26,7 @@ $dato=array(
 
 
 );
-echo $dato;
+
 return  $dato;
 }
 

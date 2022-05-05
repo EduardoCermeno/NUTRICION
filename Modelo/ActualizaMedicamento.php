@@ -32,7 +32,7 @@ class actualizamedicamento extends Conectar{
 		
 	);
 
-return 5;
+return $datos;
     }
 
 

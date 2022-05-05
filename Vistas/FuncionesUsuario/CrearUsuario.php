@@ -54,7 +54,8 @@ include "../header.php";
 				<div class="row">
 						<div class="col-sm-4 text-left" style="margin-bottom: 10px;">
 							<button   class="btn btn-warning">Registrar</button>
-							<button   class="btn btn-primary"onclick="Limpiar()">Limpiar</button>
+							<button  type="reset" class="btn btn-primary">Limpiar</button>
+							
 							
 							
 						

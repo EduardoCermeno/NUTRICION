@@ -44,7 +44,7 @@ $Conexion=$conexion->Conexion();
             M.Nombre_Medicamento
 			
           
-			FROM tb_paciente AS P INNER JOIN tb_encargadopaciente AS EP on P.Id_Paciente =EP.Id_EncargadoPaciente INNER JOIN tb_medicamento AS M on P.Id_Paciente=M.Id_Medicamento"; 
+			FROM tb_paciente AS P INNER JOIN tb_encargadopaciente AS EP on P.Id_Paciente =EP.Id_EncargadoPaciente LEFT JOIN  tb_medicamento AS M on P.Id_Paciente=M.Id_Medicamento"; 
 			$result = mysqli_query($Conexion, $sql);
 
 			while($mostrar = mysqli_fetch_array($result)){ 
@@ -60,7 +60,9 @@ $Conexion=$conexion->Conexion();
                 <td><?php echo $mostrar['Genero_Paciente']; ?></td>
                 <td><?php echo $mostrar['EstadoPaciente']; ?></td>
 				<td><?php echo $mostrar['Nombre_EncargadoPaciente']; ?></td>
-				<td><?php echo  $mostrar['Nombre_Medicamento'];?></td>
+				<td><?php  if($mostrar['Nombre_Medicamento']==null){
+				echo "No Aplica";	
+				}else{echo " Si Aplica";}?></td>
 				
 				
 				<td>

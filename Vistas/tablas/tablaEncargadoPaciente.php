@@ -100,10 +100,10 @@ $Conexion=$conexion->Conexion();
         </button>
       </div>
       <div class="modal-body">
-        <form id="actualizandopaciente" method="POST" autocomplete="off">
+        <form id="actualizandoencargado" method="POST" autocomplete="off">
  
 				
-				<input type="text" name="idencargado" id="idencargado" hidden="">
+				<input type="text" name="idencargado" id="idencargado" hidden="" >
 			
 					
 					<label> Nombre</label>
@@ -119,14 +119,14 @@ $Conexion=$conexion->Conexion();
 					<input  type="email" name="CorreoEP" id="CorreoEP"  class="form-control"  required="" >
 					
 					<label>Direccion</label>
-					<input  type="text" name="DirecciónEP" id="DirecciónEP"  class="form-control"  required="" >
+					<input  type="text" name="DireccionEP" id="DireccionEP"  class="form-control"  required="" >
 					
 		
         </form>
       </div>
 	
       <div class="modal-footer">
-	  <button type="button"  class="btn btn-danger" id="modificapaciente" data-dismiss="modal">Actualizar</button>
+	  <button type="button"  class="btn btn-danger" id="modificaencargado" data-dismiss="modal">Actualizar</button>
        
         <button type="button" onclick="cancelar()" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
        
@@ -140,9 +140,9 @@ $Conexion=$conexion->Conexion();
 		$(document).ready(function(){
 			$('#tablaencargadopaciente').DataTable();
 
-			// $('#modalEliminar').click(function(){
-			// 	eliminarPaciente();
-			// });
+			$('#modificaencargado').click(function(){
+				actualizaencargado();
+			});
 
 			//  $('#btnActualizaCategoria').click(function(){
 			// 	obtenerDatosCategoria();
@@ -166,15 +166,15 @@ function obtenerencargadopaciente(idencargado){
 		   			url:"../../Controlador/Usuarios/Actualizaencargado.php",
 					  
 		   			success:function(respuesta){
-						
+						alert(respuesta);
 					respuesta=jQuery.parseJSON(respuesta);
 				
-					$('#idencargado').val(respuesta["HOLA MUNDO"]);
+					$('#idencargado').val(respuesta["Id_EncargadoPaciente"]);
 					$('#NombreEP').val(respuesta['Nombre_EncargadoPaciente']);
 					$('#ApellidosEP').val(respuesta['Apellido_EncargadoPaciente']);
 					$('#TelefonoEP').val(respuesta['Telefono_EncargadoPaciente']);
 					$('#CorreoEP').val(respuesta['Correo_EncargadoPaciente']);
-					$('#DirecciónEP').val(respuesta['Direccion'])
+					$('#DireccionEP').val(respuesta['Direccion'])
 				
 					
 				
@@ -185,6 +185,33 @@ function obtenerencargadopaciente(idencargado){
 
 }
 
+
+function actualizaencargado(){
+	
+	$.ajax({
+				   type:"POST",
+				   data:$('#actualizandoencargado').serialize(),
+				   url:"../../Controlador/Usuarios/actualizainformacionEncargado.php",
+				   success:function(respuesta){
+					   alert(respuesta);
+				if(respuesta==1){
+					$('#tablaUsuarios').DataTable();
+					swal(":d", "Paciente Actualizado", "success");
+					$('#tablaencargadopaciente').load("../tablas/tablaEncargadoPaciente");
+						
+					
+				}else{
+					swal(":(", "fallo al actualizar", "error")
+
+				}
+				   
+				   }
+			   });	 
+
+
+
+
+}
 
 </script>
 <script>

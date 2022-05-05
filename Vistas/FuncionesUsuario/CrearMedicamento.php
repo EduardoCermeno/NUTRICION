@@ -15,12 +15,14 @@ include "../header.php";
   <fieldset>
     <h2 class="fs-title">CREAR MEDICAMENTO</h2>
     <h3 class="fs-subtitle">medicamentos que consumen los pacientes </h3>
-    <input type="text" name="IDPACIENTE" id="IDPACIENTE" placeholder="Id del paciente" required="" />
+    <input type="text" name="IDPACIENTE" id="IDPACIENTE" placeholder="CUI Del Paciente" required="" />
     <input type="text" name="Nmediacmento" id="Nmediacmento"  placeholder="Nombre del Medicamento" required=""/>
     <input type="text" name="TMedicamento" id="TMedicamento" placeholder="Tipo DE Medicamento" required=""/>
     <input type="text" name="DosisM" id="DosisM" placeholder="Dosis" />
     <input type="textarea" name="DMedicamento" id="DDMedicamentoosisM" id="specificSizeSelect" placeholder="Descripcion" required="" />
+    <label >Consumiendo?</label>
     <select class="form-select" style="Height:50px;" name="APMedicamento" id="DAPMedicamentoosisM" placeholder="Aplica Medicamento" required="" >
+    
     <option value="si">si</option>
     <option value="no">no</option>
    
@@ -58,7 +60,7 @@ alert (respuesta);
 						swal(":D", "Medicamento creado con EXITO!", "success");
 					
 					} else {
-						swal(":(", "Ha ocurrido un error!", "Error");
+						swal(":(", "Ha ocurrido un error! Verifique el el Cui del paciente sea correcto", "Error");
 					}
 				}
 			});

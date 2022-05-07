@@ -80,7 +80,7 @@ $Conexion=$conexion->Conexion();
 
 
 
-<div class="modal fade" id="modalActuaUsuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalActuaUsuario" style="background-color: black;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -89,8 +89,8 @@ $Conexion=$conexion->Conexion();
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        <form id="actualizandousuario" method="POST" autocomplete="off">
+      <div class="modal-body" style="background-color:gainsboro">
+        <form id="actualizandousuario"  method="POST" autocomplete="off">
  
 				
 					<label>Nombre persona</label>

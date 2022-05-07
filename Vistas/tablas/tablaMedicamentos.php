@@ -32,9 +32,11 @@ $Conexion=$conexion->Conexion();
 		<tbody>
 
 		<?php
+		$IDUSUARIO=$_SESSION['idUsuario'];
 			$sql = " SELECT
 			   
 			Id_Medicamento, 
+			Id_usuario,
 			Nombre_Medicamento,
 		    Tipo_Medicamento,
 			Dosis_Medicamento,
@@ -42,7 +44,7 @@ $Conexion=$conexion->Conexion();
 			Descripcion_Medicamento,
 			AplicacionMedicamento
 											
-			FROM tb_medicamento "; 
+			FROM tb_medicamento WHERE Id_usuario=$IDUSUARIO "; 
 			$result = mysqli_query($Conexion, $sql);
 
 			while($mostrar = mysqli_fetch_array($result)){ 
@@ -125,14 +127,15 @@ $Conexion=$conexion->Conexion();
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" style="background-color:gainsboro">
         <form id="actualizandomedicamento" method="POST" autocomplete="off">
- 
+
 					
 					<input type="text" name="idmedicamento" id="idmedicamento" hidden="">
 					
 					
-					<label>Nombre</label>
+					<label >Nombre</label>
+					
 					<input  type="text" name="Nmediacmento" id="Nmediacmento"  class="form-control"  required="" >
 					
 					<label>Typo</label>

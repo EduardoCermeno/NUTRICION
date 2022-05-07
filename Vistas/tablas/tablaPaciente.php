@@ -32,8 +32,10 @@ $Conexion=$conexion->Conexion();
 		<tbody>
 
 		<?php
+		$IDUSUARIO=$_SESSION['idUsuario'];
 			$sql = " SELECT 
 			P.Id_Paciente,
+			P.Id_usuario,
             P.Dpi, 
             P.Nombre_Paciente, 
             P.Apellido_Paciente, 
@@ -44,7 +46,7 @@ $Conexion=$conexion->Conexion();
             M.Nombre_Medicamento
 			
           
-			FROM tb_paciente AS P INNER JOIN tb_encargadopaciente AS EP on P.Id_Paciente =EP.Id_EncargadoPaciente LEFT JOIN  tb_medicamento AS M on P.Id_Paciente=M.Id_Medicamento"; 
+			FROM tb_paciente AS P INNER JOIN tb_encargadopaciente AS EP on P.Id_Paciente =EP.Id_EncargadoPaciente LEFT JOIN  tb_medicamento AS M on P.Id_Paciente=M.Id_Medicamento WHERE P.Id_usuario=$IDUSUARIO" ; 
 			$result = mysqli_query($Conexion, $sql);
 
 			while($mostrar = mysqli_fetch_array($result)){ 
@@ -97,7 +99,7 @@ $Conexion=$conexion->Conexion();
 </div>
 
 
-<div class="modal fade" id="modalActualizaPaciente" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalActualizaPaciente" tabindex="-1" role="dialog" style="background-color: black;" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -106,7 +108,7 @@ $Conexion=$conexion->Conexion();
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" style="background-color:gainsboro">
         <form id="actualizandopaciente" method="POST" autocomplete="off">
  
 				<div class="row">

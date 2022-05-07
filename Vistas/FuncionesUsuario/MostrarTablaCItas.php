@@ -24,12 +24,7 @@ include "../header.php";
 
 	
 <?php  include"../tablas/botones.php"?>
-		    <div class="row">
-		    	<div class="col-sm-4" style="margin-top: 10px;">
-		    		<span class="btn btn-warning"  data-toggle="modal" data-target="#crearcita">
-		    			 <span class="fas fa-plus-circle"></span> Crear Nueva Cita
-		    		</span>
-		    	</div>
+		   
 				
 		    </div>
 		    <hr>

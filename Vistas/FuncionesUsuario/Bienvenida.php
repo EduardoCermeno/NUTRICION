@@ -15,23 +15,22 @@ include "../header.php";
 ?>
  <div id="layoutSidenav_content"    >
            
+ <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert" style="margin-bottom: 200%;">
+  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
 
 
  
-
-     <div class="card"  style="width: 60rem;" >
-     <div class="container"  style="text-align:center">
-
-  <img src="../../Img/bienvenida.jpg" class="img-fluid" alt="...">
-  <div class="card-body">
-    <p class="card-text">Tener una dieta saludable, con abundantes vegetales, con pocos alimentos procesados, pocos azúcares y bollería, sin alcohol, y con alimentos ricos en nutrientes, no solo ayudará a tu salud física, sino a tu salud mental. Es decir, con una nutrición saludable serás más feliz y tu cerebro funcionará mejor.</p>
-  </div>
-  </div>
-</div>
-   
-
-
-                </div>
                 
             </div>
 

@@ -82,16 +82,16 @@
                                Registrar Encargado Paciente
                             </a>
                           
-                            <a class="nav-link" href="../FuncionesUsuario/calculadora.php">
+                            <!-- <a class="nav-link" href="../FuncionesUsuario/calculadora.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-calculator"></i></div>
                                 Calculadora Antropometrica
-                            </a>
+                            </a> -->
                             
-                            <a class="nav-link" href="../FuncionesUsuario/ProgramarCita.php">
+                            <!-- <a class="nav-link" href="../FuncionesUsuario/ProgramarCita.php">
                                 <div class="sb-nav-link-icon"><i class="far fa-calendar-alt"> </i></div>
                                 
                                 Agendar Cita
-                            </a>
+                            </a> -->
                           
                             <a class="nav-link" href="../FuncionesUsuario/CrearUsuario.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-plus-circle"></i></div>
@@ -102,7 +102,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-capsules"></i></div>
                             Registrar Medicamento
                             </a>
-                            <a class="nav-link" href="../FuncionesUsuario/MostrarTablaCItas.php">
+                            <a class="nav-link" href="../FuncionesUsuario/MostrarTablaPaciente.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                           Reportes
                             </a>

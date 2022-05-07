@@ -90,7 +90,7 @@ $Conexion=$conexion->Conexion();
 </div>
 
 
-<div class="modal fade" id="modalActualizaEncargado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalActualizaEncargado" tabindex="-1" role="dialog"  style="background-color: black;" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -99,7 +99,7 @@ $Conexion=$conexion->Conexion();
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" style="background-color:gainsboro">
         <form id="actualizandoencargado" method="POST" autocomplete="off">
  
 				

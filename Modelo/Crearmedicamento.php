@@ -3,8 +3,19 @@ require_once 'Conexion.php';
  class Crearmedicamento extends Conectar{
 
 public function agregamedicmaneto($datos){
+    $conexion = Conectar::conexion();
 
-	$conexion = Conectar::conexion();
+
+	$sql = "SELECT Dpi
+				FROM tb_paciente
+				WHERE Dpi = '$datos[IDPACIENTE]'";
+   $result = mysqli_query($conexion, $sql);
+   $datosResultado = mysqli_fetch_array($result);
+   
+
+if($datosResultado!=null||$datosResultado!=""){
+
+	
     $sql="INSERT INTO tb_medicamento(   Id_Paciente, 
                                         Id_usuario,
                                         Nombre_Medicamento, 
@@ -30,11 +41,12 @@ $respuesta = $query->execute();
 $query->close();
 
 return $respuesta;
+}else {return 2;}
 
+}
 }
 
 
-}
 
 
 

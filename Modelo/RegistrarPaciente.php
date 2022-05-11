@@ -20,14 +20,15 @@ class Usuario extends Conectar{
 			if ($respuesta > 0) {
 				$_SESSION['usuario'] = $Email;
 
-				$sql = "SELECT Id_usuario 
+				$sql = "SELECT Id_usuario, Rol_Usuario
 						FROM tb_usuarios 
 						WHERE Nombre_Usuario = '$Email' 
 						AND  Clave_Usuario  = '$password'";
 				$result = mysqli_query($conexion ,$sql);
-				$idUsuario = mysqli_fetch_row($result)[0];
+				$resultado = mysqli_fetch_array($result);
 
-				$_SESSION['idUsuario'] = $idUsuario;
+				$_SESSION['idUsuario'] = $resultado['Id_usuario'];
+				$_SESSION['ROLUSUARIO'] = $resultado['Rol_Usuario'];
 
 			
 				return 1;

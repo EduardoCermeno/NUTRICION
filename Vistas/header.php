@@ -77,27 +77,18 @@
                                Registrar Paciente
                             </a>
                             
-                            <a class="nav-link" href="../FuncionesUsuario/RegistrarPadres.php">
+                            <a class="nav-link" href="../FuncionesUsuario/RegistrarEncargado.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-street-view" ></i></div>
                                Registrar Encargado Paciente
                             </a>
                           
-                            <!-- <a class="nav-link" href="../FuncionesUsuario/calculadora.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-calculator"></i></div>
-                                Calculadora Antropometrica
-                            </a> -->
-                            
-                            <!-- <a class="nav-link" href="../FuncionesUsuario/ProgramarCita.php">
-                                <div class="sb-nav-link-icon"><i class="far fa-calendar-alt"> </i></div>
-                                
-                                Agendar Cita
-                            </a> -->
-                          
+                         
+                          <?php if($_SESSION['ROLUSUARIO']=="SuperUsuario"){?>
                             <a class="nav-link" href="../FuncionesUsuario/CrearUsuario.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-plus-circle"></i></div>
                             Crear Usuario
                             </a>
-                            
+                            <?php }?>
                             <a class="nav-link" href="../FuncionesUsuario/CrearMedicamento.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-capsules"></i></div>
                             Registrar Medicamento

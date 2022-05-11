@@ -17,7 +17,7 @@ $Conexion=$conexion->Conexion();
 	<table class="table table-hover table-dark" id="tablmedicamentos">
 		<thead>
 			<tr style="text-align: center;">
-				<td>Id</td>
+				
 				<td>NombreMedicamento</td>
 				<td>Tipo</td>
 				<td>Dosis</td>
@@ -25,6 +25,7 @@ $Conexion=$conexion->Conexion();
 				<td>Hora</td>
 				<td>Descripcion</td>
 				<td>Aplicacion</td>
+				<td>Paciente</td>
 				<td>Editar</td>
 				<td>Eliminar</td>
 			</tr>
@@ -33,18 +34,45 @@ $Conexion=$conexion->Conexion();
 
 		<?php
 		$IDUSUARIO=$_SESSION['idUsuario'];
+		if($_SESSION['ROLUSUARIO']=="SuperUsuario"){
+		
 			$sql = " SELECT
 			   
-			Id_Medicamento, 
-			Id_usuario,
-			Nombre_Medicamento,
-		    Tipo_Medicamento,
-			Dosis_Medicamento,
-			Horario_Medicamento,
-			Descripcion_Medicamento,
-			AplicacionMedicamento
+			
+			M.Id_Medicamento,
+			M.Id_usuario,
+			M.Nombre_Medicamento,
+		    M.Tipo_Medicamento,
+			M.Dosis_Medicamento,
+			M.Horario_Medicamento,
+			M.Descripcion_Medicamento,
+			M.AplicacionMedicamento,
+			P.Nombre_Paciente,
+			P.Apellido_Paciente
 											
-			FROM tb_medicamento WHERE Id_usuario=$IDUSUARIO "; 
+			FROM tb_medicamento AS M inner JOIN tb_paciente AS P ON M.Id_Paciente=P.Dpi  "; 
+		}else if($_SESSION['ROLUSUARIO']=="Usuario"){
+
+			$sql = " SELECT
+			   
+			
+			M.Id_Medicamento,
+			M.Id_usuario,
+			M.Nombre_Medicamento,
+		    M.Tipo_Medicamento,
+			M.Dosis_Medicamento,
+			M.Horario_Medicamento,
+			M.Descripcion_Medicamento,
+			M.AplicacionMedicamento,
+			P.Nombre_Paciente,
+			P.Apellido_Paciente
+											
+			FROM tb_medicamento AS M inner JOIN tb_paciente AS P ON M.Id_Paciente=P.Dpi WHERE M.Id_usuario= $IDUSUARIO ";
+
+
+
+
+		}
 			$result = mysqli_query($Conexion, $sql);
 
 			while($mostrar = mysqli_fetch_array($result)){ 
@@ -54,12 +82,13 @@ $Conexion=$conexion->Conexion();
 		?>
 			 <tr style="text-align: center;">
 				
-				<td><?php echo $mostrar['Id_Medicamento']; ?></td>
+				
 				<td><?php echo $mostrar['Nombre_Medicamento']; ?></td>
 				<td><?php echo  $mostrar['Tipo_Medicamento']; ?></td>
 				<td><?php echo  $mostrar['Dosis_Medicamento']; ?></td>
 				<td><?php echo  $mostrar['Horario_Medicamento']; ?></td>
 				<td><?php echo  $mostrar['Descripcion_Medicamento']; ?></td>
+				
 				<?php 
 				if($mostrar['AplicacionMedicamento']=='si'){?>
 
@@ -82,12 +111,14 @@ $Conexion=$conexion->Conexion();
 					
 				<?php 
 				}
+				
 				?>
 				
 
-			
+				<td><?php echo $mostrar['Nombre_Paciente']." ".$mostrar['Apellido_Paciente']; ?></td>
 				<td>
-
+					
+				
 				<span class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalActualizaMedicamento" 
 							onclick="obtenermedicamento('<?php echo $mostrar['Id_Medicamento']?>')" >
 							

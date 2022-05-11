@@ -31,15 +31,32 @@ $Conexion=$conexion->Conexion();
 		<tbody>
 
 		<?php
+			$IDUSUARIO=$_SESSION['idUsuario'];
+		
+			if($_SESSION['ROLUSUARIO']=="SuperUsuario"){
 			$sql = "SELECT 
-		  Id_EncargadoPaciente, 
-		  Nombre_EncargadoPaciente, 
-		  Apellido_EncargadoPaciente, 
-		  Telefono_EncargadoPaciente, 
-		  Correo_EncargadoPaciente, 
-		  Direccion
+					Id_EncargadoPaciente, 
+					Nombre_EncargadoPaciente, 
+					Apellido_EncargadoPaciente, 
+					Telefono_EncargadoPaciente, 
+					Correo_EncargadoPaciente, 
+					Direccion
           
 			FROM tb_encargadopaciente"; 
+			
+		}else if($_SESSION['ROLUSUARIO']=="Usuario"){
+			$sql = "SELECT 
+					Id_EncargadoPaciente, 
+					Id_Usuario,
+					Nombre_EncargadoPaciente, 
+					Apellido_EncargadoPaciente, 
+					Telefono_EncargadoPaciente, 
+					Correo_EncargadoPaciente, 
+					Direccion
+          
+			FROM tb_encargadopaciente WHERE Id_Usuario=$IDUSUARIO"; 
+		}
+
 			$result = mysqli_query($Conexion, $sql);
 
 			while($mostrar = mysqli_fetch_array($result)){ 

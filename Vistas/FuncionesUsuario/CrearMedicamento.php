@@ -59,8 +59,8 @@ alert (respuesta);
 						$("#msform")[0].reset();
 						swal(":D", "Medicamento creado con EXITO!", "success");
 					
-					} else {
-						swal(":(", "Ha ocurrido un error! Verifique el el Cui del paciente sea correcto", "Error");
+					} else if(respuesta==2){
+						swal(":(", "Noexiste ningun usuario registrado con ese cui", "Error");
 					}
 				}
 			});

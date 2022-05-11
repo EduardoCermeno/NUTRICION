@@ -9,6 +9,7 @@ $datos = array(
 	
 
 "DpiPaciente" =>$_POST['DPI'],
+"IDUSUARIO"=>$_SESSION['idUsuario'],
 "NombreEP" => $_POST['NombreEP'],
 "ApellidosEP"=>$_POST['ApellidosEP'],
 "TelefonoEP" => $_POST['TelefonoEP'],

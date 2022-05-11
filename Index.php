@@ -17,8 +17,8 @@
     <!-- Icon -->
     <div class="fadeIn first" >
       <p></p>
-      <img src="img/niño.png" class="img-thumbnail", height="10px" id="icon" alt="User Icon" />
-      <h1>Nutrición Infantil</h1>
+      <!-- <img src="img/niño.png" class="img-thumbnail", height="10px" id="icon" alt="User Icon" /> -->
+      <h1>ACILO</h1>
     </div>
 
 
@@ -41,7 +41,7 @@
 
 
 
-<script src="Librerias/Bootstrap/bootstrap.min.js"></script> -->
+<script src="Librerias/Bootstrap/bootstrap.min.js"></script> 
 <script src="Librerias/jquery-3.6.0.min.js"></script>
 <script src="Librerias/sweetalert.min.js"></script>
 

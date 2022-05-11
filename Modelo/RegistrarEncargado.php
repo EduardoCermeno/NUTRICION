@@ -23,16 +23,18 @@ class Padres extends Conectar{
 	 	
 
 		 $sql = "INSERT INTO tb_encargadopaciente ( Id_Paciente,
+		 										Id_Usuario,
 		 										 Nombre_EncargadoPaciente, 
 												 Apellido_EncargadoPaciente, 
 												 Telefono_EncargadoPaciente,
 												 Correo_EncargadoPaciente,
 												 Direccion) 
-							VALUES (?,?,?,?,?,?)";
+							VALUES (?,?,?,?,?,?,?)";
                           
 			$query = $conexion->prepare($sql);
          
-			$query->bind_param("isssss", 	$datosResultado['Id_Paciente'],
+			$query->bind_param("iisssss", 	$datosResultado['Id_Paciente'],
+											$datos['IDUSUARIO'],
 											$datos['NombreEP'],
 											$datos['ApellidosEP'],
 											$datos['TelefonoEP'],

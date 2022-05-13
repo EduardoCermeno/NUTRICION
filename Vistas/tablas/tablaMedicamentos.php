@@ -137,8 +137,17 @@ $Conexion=$conexion->Conexion();
 					
 				</td>
 			</tr> 
+
+
+
+
+
+			
 			<?php 
+			
 			}
+
+			
 
 			?>
 		</tbody>

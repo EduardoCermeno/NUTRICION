@@ -7,7 +7,7 @@ include "../header.php";
 
 ?>
 
-<div id="layoutSidenav_content">
+
 
 <form id="msform" onsubmit=" return agregarMedicamento()">
   

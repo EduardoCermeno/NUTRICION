@@ -5,38 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loguin</title>
-    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/inicio.css">
     <link rel="stylesheet" type="text/css" href="Librerias/Bootstrap/bootstrap.min.css">
 </head>
-<body style="background-color: #56baed;">
-    
-<div class="wrapper fadeInDown">
-  <div id="formContent">
-    <!-- Tabs Titles -->
+ <body style="background-color: #081013;">
 
-    <!-- Icon -->
-    <div class="fadeIn first" >
-      <p></p>
-      <!-- <img src="img/niño.png" class="img-thumbnail", height="10px" id="icon" alt="User Icon" /> -->
-      <h1>ACILO</h1>
+  
+
+  
+
+    <div class="wrapper">
+        <div class="logo">
+            <img src="https://img.freepik.com/vector-gratis/dibujos-animados-abuelos-felices_24877-6704.jpg?w=2000" alt="">
+        </div>
+        <div class="text-center mt-4 name">
+           ACILO
+        </div>
+        <form class="p-3 mt-3" method="POST" id="frmLogin" onsubmit="return logear()" >
+            <div class="form-field d-flex align-items-center">
+                <span class="far fa-user"></span>
+                <input type="text" name="login" id="login" placeholder="Nombre de Usuario">
+            </div>
+            <div class="form-field d-flex align-items-center">
+                <span class="fas fa-key"></span>
+                <input type="password" name="password" id="pwd" placeholder="Clave">
+            </div>
+            <button class="btn mt-3">Iniciar Sesión</button>
+        </form>
+        
     </div>
-
-
-    <!-- Login Form -->
-  
-    <form method="post" id="frmLogin" onsubmit="return logear()">
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="Nombre de Usuario" required="">
-      <input type="password" id="password" class="fadeIn third" name="password" placeholder="Contraseña" required="">
-    <input type="submit" class="fadeIn fourth" value="Iniciar Sesion"> 
-      
-    </form>
-
-    <!-- Remind Passowrd -->
-  
-
-  
-
-   
 
 
 

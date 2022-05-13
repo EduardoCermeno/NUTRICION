@@ -114,7 +114,6 @@ $Conexion=$conexion->Conexion();
 					<select class="form-select" id="RolUsuario" name="RolUsuario"  id="specificSizeSelect">
 								<option selected>Seleccionar Rol</option>
 								<option value="SuperUsuario">SuperUsuario</option>
-								<option value="Administrativo" >Administrativo</option>
 								<option value="Usuario" >Usuario</option>
       
 					</select>

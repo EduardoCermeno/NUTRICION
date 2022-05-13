@@ -59,10 +59,16 @@
                            
 
 
-                            <a class="nav-link" href="../FuncionesUsuario/Bienvenida.php">
+                            <a class="nav-link" href="../FuncionesUsuario/Bienvenida2.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-house-user"> </i></div>
                                 
                                 INICIO
+                            </a>
+
+                            <a class="nav-link" href="../FuncionesUsuario/Bienvenida.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-house-user"> </i></div>
+                                
+                               Notificaciones
                             </a>
                             <a class="nav-link" href="../FuncionesUsuario/Bienvenida2.php">
                                 <div class="sb-nav-link-icon"><i class="far fa-calendar-alt"> </i></div>

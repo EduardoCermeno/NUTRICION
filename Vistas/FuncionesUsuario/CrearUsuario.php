@@ -11,7 +11,7 @@ include "../header.php";
 
 			
 			
-			<div class="row justify-conten-center" style="padding-bottom: 15%; ">
+			<div class="row justify-conten-center" style="margin-left:20px ; margin-right:20px">
 <div class="container"  style="background-color:#F0F3F4   ; border-radius: 30px 30px 30px 30px;  opacity: 0.85; ">
 
 		<h3 style="text-align: center;">Registro de usuario</h3>
@@ -45,7 +45,6 @@ include "../header.php";
 					<select class="form-select" id="RolUsuario" name="RolUsuario"  id="specificSizeSelect">
 								<option selected>Seleccionar Rol</option>
 								<option value="SuperUsuario">SuperUsuario</option>
-								<option value="Administrativo" >Administrativo</option>
 								<option value="Usuario" >Usuario</option>
       
 					</select>

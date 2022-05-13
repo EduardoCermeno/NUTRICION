@@ -171,7 +171,7 @@ $Conexion=$conexion->Conexion();
         <form id="actualizandomedicamento" method="POST" autocomplete="off">
 
 					
-					<input type="text" name="idmedicamento" id="idmedicamento" hidden="">
+					<input type="text"  name="idmedicamento" id="idmedicamento" hidden="">
 					
 					
 					<label >Nombre</label>
@@ -240,7 +240,7 @@ function obtenermedicamento(idmedicamento){
 		   			data:"IDMEDICAMENTO=" + IDMEDICAMENTO,
 		   			url:"../../Controlador/Usuarios/ActualizaMedicamento.php",
 		   			success:function(respuesta){
-						alert(respuesta);
+						
 					respuesta=jQuery.parseJSON(respuesta);
 					
 					$('#idmedicamento').val(respuesta['idmedicamento']);
@@ -268,7 +268,7 @@ function actualizamedicamento(){
 				   data:$('#actualizandomedicamento').serialize(),
 				   url:"../../Controlador/Usuarios/actualizainformacionMedicamento.php",
 				   success:function(respuesta){
-					   alert(respuesta);
+					  
 				if(respuesta==1){
 					$('#tablaUsuarios').DataTable();
 					swal(":d", "Medicamento Actualizado", "success");
@@ -314,7 +314,7 @@ alert(IDMEDICAMENTO);
 		   			data:"IDMEDICAMENTO=" + IDMEDICAMENTO,
 		   			url:"../../Controlador/Usuarios/EliminarMedicamento.php",
 		   			success:function(respuesta){
-					alert(respuesta);
+					
 		   				respuesta = respuesta.trim();
 		   				if (respuesta == 1  ) {
 							

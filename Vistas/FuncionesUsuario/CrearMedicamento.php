@@ -9,13 +9,13 @@ include "../header.php";
 
 
 
-<form id="msform" onsubmit=" return agregarMedicamento()">
+<form id="msform" onsubmit=" return agregarMedicamento()" autocomplete="off">
   
   <!-- fieldsets -->
   <fieldset>
     <h2 class="fs-title">CREAR MEDICAMENTO</h2>
     <h3 class="fs-subtitle">medicamentos que consumen los pacientes </h3>
-    <input type="text" name="IDPACIENTE" id="IDPACIENTE" placeholder="CUI Del Paciente" required="" />
+    <input type="text" maxlength="9" name="IDPACIENTE" id="IDPACIENTE" placeholder="CUI Del Paciente" required="" />
     <input type="text" name="Nmediacmento" id="Nmediacmento"  placeholder="Nombre del Medicamento" required=""/>
     <input type="text" name="TMedicamento" id="TMedicamento" placeholder="Tipo DE Medicamento" required=""/>
     <input type="text" name="DosisM" id="DosisM" placeholder="Dosis" />
@@ -54,14 +54,14 @@ function agregarMedicamento() {
 				success:function(respuesta){
                     
 					respuesta = respuesta.trim();
-alert (respuesta);
+
 					if (respuesta == 1) {
 						$("#msform")[0].reset();
 						swal(":D", "Medicamento creado con EXITO!", "success");
 					
 					} else if(respuesta==2){
 						swal(":(", "Noexiste ningun usuario registrado con ese cui", "Error");
-					}
+					} else {swal(":(", "ha orucrrido un error al guardar", "Error")}
 				}
 			});
 

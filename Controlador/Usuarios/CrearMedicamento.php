@@ -1,6 +1,7 @@
 <?php
 session_start();
-require_once"../../Modelo/Crearmedicamento.php";
+
+require_once '../../Modelo/Crearmedicamento.php';
 $datos=array(
 
 "IDPACIENTE"=>$_POST['IDPACIENTE'],
@@ -13,6 +14,7 @@ $datos=array(
 "APMedicamento"=>$_POST['APMedicamento'],
 
 );
+
 $medicamentoOBJ=new Crearmedicamento();
 echo $medicamentoOBJ->agregamedicmaneto($datos);
 

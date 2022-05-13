@@ -183,7 +183,7 @@ function obtenerencargadopaciente(idencargado){
 		   			url:"../../Controlador/Usuarios/Actualizaencargado.php",
 					  
 		   			success:function(respuesta){
-						alert(respuesta);
+					
 					respuesta=jQuery.parseJSON(respuesta);
 				
 					$('#idencargado').val(respuesta["Id_EncargadoPaciente"]);
@@ -210,7 +210,7 @@ function actualizaencargado(){
 				   data:$('#actualizandoencargado').serialize(),
 				   url:"../../Controlador/Usuarios/actualizainformacionEncargado.php",
 				   success:function(respuesta){
-					   alert(respuesta);
+					  
 				if(respuesta==1){
 					$('#tablaUsuarios').DataTable();
 					swal(":d", "Paciente Actualizado", "success");
@@ -261,7 +261,7 @@ function eliminarencargado(idencargado) {
 		   			data:"IDENCARGADO=" + IDENCARGADO,
 		   			url:"../../Controlador/Usuarios/EliminarEncargado.php",
 		   			success:function(respuesta){
-					alert(respuesta);
+					
 		   				respuesta = respuesta.trim();
 		   				if (respuesta == 1  ) {
 							

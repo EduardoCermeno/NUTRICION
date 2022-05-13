@@ -9,13 +9,13 @@ include "../header.php";
 
 <div id="layoutSidenav_content">
 
-<form id="msform" onsubmit=" return Registrar()">
+<form id="msform" onsubmit=" return Registrar()" autocomplete="off">
   
   <!-- fieldsets -->
   <fieldset>
     <h2 class="fs-title">CREAR PACIENTE</h2>
     
-    <input type="text" name="dpi" id="dpi" class="form-control" placeholder="CUI" required="">
+    <input type="text" maxlength="9" name="dpi" id="dpi" class="form-control" placeholder="CUI" required="">
 				
 					<input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombres" required="">
 				
@@ -67,7 +67,7 @@ include "../header.php";
             data:$('#msform').serialize(),
             url:"../../Controlador/Usuarios/RegistrarPaciente.php",
             success:function(respuesta) {
-               alert(respuesta);
+           
               respuesta = respuesta.trim();
           
 
@@ -98,7 +98,7 @@ include "../header.php";
  <script>
    function enlazar(){
    
-    window.location.href='RegistrarPadres.php'  
+    window.location.href='RegistrarEncargado.php'  
 
    }
  </script>

@@ -17,7 +17,7 @@ $Conexion=$conexion->Conexion();
 	<table class="table table-hover table-dark" id="tablapacientes">
 		<thead>
 			<tr style="text-align: center;">
-				<td>ID</td>
+				
 				<td>CUI</td>
 				<td>Nombre</td>
                 <td>Fecha Nacimiento</td>
@@ -46,6 +46,7 @@ $Conexion=$conexion->Conexion();
 			P.Genero_Paciente,
             P.EstadoPaciente,
 			EP.Nombre_EncargadoPaciente,
+			EP.Apellido_EncargadoPaciente,
             M.Nombre_Medicamento
 			
           
@@ -61,6 +62,7 @@ $Conexion=$conexion->Conexion();
 	P.Genero_Paciente,
 	P.EstadoPaciente,
 	EP.Nombre_EncargadoPaciente,
+	EP.Apellido_EncargadoPaciente,
 	M.Nombre_Medicamento
 	
   
@@ -79,13 +81,13 @@ $Conexion=$conexion->Conexion();
 				
 		?>
 			 <tr style="text-align: center;">
-			 	<td><?php echo  $mostrar['Id_Paciente'];?></td>
+			 	
 				<td><?php echo  $mostrar['Dpi'];?></td>
 				<td><?php echo $mostrar['Nombre_Paciente']." ".$mostrar['Apellido_Paciente']; ?></td>
                 <td><?php echo $mostrar['FechaNacimiento_Paciente']; ?></td>
                 <td><?php echo $mostrar['Genero_Paciente']; ?></td>
                 <td><?php echo $mostrar['EstadoPaciente']; ?></td>
-				<td><?php echo $mostrar['Nombre_EncargadoPaciente']; ?></td>
+				<td><?php echo $mostrar['Nombre_EncargadoPaciente']." ".$mostrar['Apellido_EncargadoPaciente']; ?></td>
 				<td><?php  if($mostrar['Nombre_Medicamento']==null){
 				echo "No Aplica";	
 				}else{echo " Si Aplica";}?></td>
@@ -138,7 +140,7 @@ $Conexion=$conexion->Conexion();
 				<div class="row">
 				<input type="text" name="idpaciente" id="idpaciente" hidden="">
 				<label> CUI</label>
-					<input type="text" name="cui" id="cui" class="form-control" required="">
+					<input type="text" maxlength="8" name="cui" id="cui" class="form-control" required="">
 					
 					<label> Nombre</label>
 					<input type="text" name="nombres" id="nombres" class="form-control" required="">
@@ -234,7 +236,7 @@ function ObtenerdatosPaciente(idPaciente){
 		   			data:"IDPACIENTE=" + IDPACIENTE,
 		   			url:"../../Controlador/Usuarios/ActualizaPaciente.php",
 		   			success:function(respuesta){
-						alert(respuesta);
+						
 					respuesta=jQuery.parseJSON(respuesta);
 					
 					$('#idpaciente').val(respuesta['idpaciente']);
@@ -260,7 +262,7 @@ function actualizapaciente(){
 				   data:$('#actualizandopaciente').serialize(),
 				   url:"../../Controlador/Usuarios/actualizainformacionPaciente.php",
 				   success:function(respuesta){
-					   alert(respuesta);
+					
 				if(respuesta==1){
 					$('#tablaUsuarios').DataTable();
 					swal(":d", "Paciente Actualizado", "success");
@@ -303,7 +305,7 @@ function eliminarPaciente(idpaciente) {
 		   			data:"IDPACIENTE=" + IDPACIENTE,
 		   			url:"../../Controlador/Usuarios/EliminarPaciente.php",
 		   			success:function(respuesta){
-						alert(respuesta)
+						
 		   				respuesta = respuesta.trim();
 		   				if (respuesta == 1) {
 							

@@ -102,7 +102,7 @@ if(pass1==pass2){
 				success:function(respuesta){
 
 					respuesta = respuesta.trim();
-alert (respuesta);
+
 					if (respuesta == 1) {
 						$("#frmRegistro")[0].reset();
 						swal(":D", "Agregado con exito!", "success");

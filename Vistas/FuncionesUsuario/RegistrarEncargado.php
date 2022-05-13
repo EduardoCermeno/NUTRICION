@@ -8,13 +8,13 @@ include "../header.php";
 ?>
 <div id="layoutSidenav_content">
 
-<form id="msform" onsubmit=" return Registrar()">
+<form id="msform" onsubmit=" return Registrar()" autocomplete="off">
   
   <!-- fieldsets -->
   <fieldset>
     <h2 class="fs-title">CREAR ENCARGADO</h2>
     
-					<input type="text" name="DPI" id="DPI" class="form-control" placeholder="CUI Del Paciente" required="">
+					<input type="text" maxlength="9" name="DPI" id="DPI" class="form-control" placeholder="CUI Del Paciente" required="">
           
 					<input type="text" name="NombreEP" id="NombresenEP" class="form-control" placeholder="Nombre de Encargado" required="">
 				
@@ -80,7 +80,7 @@ include "../header.php";
             success:function(respuesta) {
                
               respuesta = respuesta.trim();
-         alert(respuesta);
+         
 
               if (respuesta == 1) {
                 $("#msform")[0].reset();

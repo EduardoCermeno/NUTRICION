@@ -17,11 +17,14 @@
     <div class="wrapper">
         <div class="logo">
             <img src="https://img.freepik.com/vector-gratis/dibujos-animados-abuelos-felices_24877-6704.jpg?w=2000" alt="">
+        
         </div>
+       
+
         <div class="text-center mt-4 name">
            ACILO
         </div>
-        <form class="p-3 mt-3" method="POST" id="frmLogin" onsubmit="return logear()" >
+        <form class="p-3 mt-3" method="POST" id="frmLogin" onsubmit="return logear()" autocomplete="off" >
             <div class="form-field d-flex align-items-center">
                 <span class="far fa-user"></span>
                 <input type="text" name="login" id="login" placeholder="Nombre de Usuario">
@@ -50,11 +53,11 @@
             data:$('#frmLogin').serialize(),
             url:"Controlador/Usuarios/loguin.php",
             success:function(respuesta) {
-              alert(respuesta);
+          
                 respuesta = respuesta.trim();
                 if (respuesta == 1) {
                
-                    window.location = "Vistas/FuncionesUsuario/Bienvenida.php";
+                    window.location = "Vistas/FuncionesUsuario/inicio.php";
                 } else {
                     swal(":(", "El usuario o contraseña son Incorrectos!", "error");
                 }

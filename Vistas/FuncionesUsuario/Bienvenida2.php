@@ -16,8 +16,10 @@ $Conexion=$conexion->Conexion();
 
 
 <div class="table-responsive">
-	<table class="table table-hover table-dark" id="tablapacientes">
+	<table class="table table-hover table-dark" id="">
 		<thead>
+	
+		
 			<tr style="text-align: center;">
 				<td>nombre</td>
 				<td>medicamento</td>
@@ -89,12 +91,17 @@ INNER JOIN tb_medicamento AS M ON P.Dpi=M.Id_Paciente INNER JOIN tb_encargadopac
                        }
                 ?>
              
-
+             </tr> 
           <?php  
       }   
 				?>
+
+</tbody>
+	</table>
+
+</div>
       
-			</tr> 
+			
 
 
 
@@ -116,7 +123,7 @@ INNER JOIN tb_medicamento AS M ON P.Dpi=M.Id_Paciente INNER JOIN tb_encargadopac
 
 
 
-
+           
 
                 <?php
 

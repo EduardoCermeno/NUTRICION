@@ -148,6 +148,7 @@ $Conexion=$conexion->Conexion();
 			}
 
 			
+			//require_once '../FuncionesUsuario/Bienvenida2.php';
 
 			?>
 		</tbody>

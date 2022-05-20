@@ -14,9 +14,9 @@
 
   
 
-    <div class="wrapper">
+    <div class="wrapper"class="justify-content-center">
         <div class="logo">
-            <img src="https://img.freepik.com/vector-gratis/dibujos-animados-abuelos-felices_24877-6704.jpg?w=2000" alt="">
+            <img src="./Img/ancianos.jpg" alt="">
         
         </div>
        

@@ -88,9 +88,9 @@ $Conexion=$conexion->Conexion();
                 <td><?php echo $mostrar['Genero_Paciente']; ?></td>
                 <td><?php echo $mostrar['EstadoPaciente']; ?></td>
 				<td><?php echo $mostrar['Nombre_EncargadoPaciente']." ".$mostrar['Apellido_EncargadoPaciente']; ?></td>
-				<td><?php  if($mostrar['Nombre_Medicamento']==null){
-				echo "No Aplica";	
-				}else{echo " Si Aplica";}?></td>
+				<td><?php  if($mostrar['Nombre_Medicamento']==""){
+				echo "Si Aplica";	
+				}else if($mostrar['Nombre_Medicamento']!="") {echo " No Aplica";}?></td>
 				
 				
 				<td>

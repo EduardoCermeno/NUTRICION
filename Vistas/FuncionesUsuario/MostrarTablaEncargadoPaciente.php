@@ -2,7 +2,7 @@
 
 session_start();
 if (isset($_SESSION['usuario'])){
-include "../header.php";
+include "../header2.php";
 
 
 
@@ -13,7 +13,7 @@ include "../header.php";
 <div class="jumbotron jumbotron-fluid">
 		  <div class="container">
 
-<?php  include"../tablas/botones.php"?>
+<?php  include "../tablas/botones.php"?>
 		    <!-- <div class="row">
 		    	<div class="col-sm-4">
 		    		<span class="btn btn-warning" data-toggle="modal" data-target="#crearcita">
@@ -80,3 +80,4 @@ include "../header.php";
    header("location:../../index.php");
 
 }
+?>

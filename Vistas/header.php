@@ -8,7 +8,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Acilo</title>
-        <link  rel="stylesheet" href="../../Librerias/Bootstrap/bootstrap.min.js">
+        <link  rel="stylesheet" href="../../Librerias/Bootstrap/bootstrap.min.css">
 
         <link href="../../Css/styles.css" rel="stylesheet" />
       
@@ -17,7 +17,7 @@
         <!-- <link href="../../Css/logn.css" rel="stylesheet" /> -->
         <!-- <link href="../../Css/Programarcita.css" rel="stylesheet" /> -->
         <link  rel="stylesheet" href="../../Librerias/datatable/dataTables.bootstrap4.min.css">
-        <link rel="stylesheet" type="text/css" href="../../librerias/fontawesome/css/all.css">
+        <link rel="stylesheet" type="text/css" href="../../Librerias/fontawesome/css/all.css">
         
     </head>
     <body>

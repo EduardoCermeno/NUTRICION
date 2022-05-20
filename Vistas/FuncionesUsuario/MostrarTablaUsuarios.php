@@ -7,7 +7,7 @@ $conexion=new Conectar();
 $Conexion=$conexion->Conexion();
 
 if (isset($_SESSION['usuario'])){
-include "../header.php";
+include "../header2.php";
 
 // $ID=$_SESSION['citando']; 
 

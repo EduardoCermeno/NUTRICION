@@ -7,7 +7,7 @@ $conexion=new Conectar();
 $Conexion=$conexion->Conexion();
 
 if (isset($_SESSION['usuario'])){
-include "../header.php";
+include "../header2.php";
 
 // $ID=$_SESSION['citando']; 
 
@@ -46,7 +46,7 @@ include "../header.php";
             </div> 
 
 
-            </div> </div>
+           
             <script src="../../Librerias/jquery-3.6.0.min.js"></script>
             <!-- <script src="../../Js/AgregarCita.js"></script> -->
            
@@ -73,6 +73,7 @@ include "../header.php";
 
 
    <?php
+  
    include "../footer.php";
    
 }else {
@@ -80,3 +81,4 @@ include "../header.php";
    header("location:../../index.php");
 
 }
+?>

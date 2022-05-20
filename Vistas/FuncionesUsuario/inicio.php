@@ -2,7 +2,7 @@
 
 session_start();
 if (isset($_SESSION['usuario'])){
-include "../header.php";
+include "../header2.php";
 
 
 ?>
@@ -15,7 +15,7 @@ include "../header.php";
   </div>
 </div>
 
-<img src="https://img.freepik.com/vector-gratis/mujer-sonriente-anciana-feliz-hogar-ancianos-personaje-medico-dibujos-animados-doodle-dibujado-mano_40876-3177.jpg?w=2000" class="img-fluid" alt="...">
+<img src="../../Img/inicio.png" class="img-fluid" alt="...">
 
 
 <div class="accordion" id="accordionPanelsStayOpenExample">
@@ -26,7 +26,7 @@ include "../header.php";
       </button>
     </h2>
     <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-      <div class="accordion-body">
+      <div class="accordion-body" style="text-align: justify;margin-left:10px; margin-right:10px">
         <strong>La felicidad no consiste en vivir sin problemas, sino en saber vivir; es el encuentro con lo mejor de uno mismo, el arte de sacarle a la vida el máximo posible.
 La felicidad es hacer lo que se desea, y desear lo que se hace.
 La gente feliz parece ser la que no tiene motivo especial para ser feliz, salvo que lo es.

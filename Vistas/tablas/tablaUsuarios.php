@@ -15,7 +15,7 @@ $Conexion=$conexion->Conexion();
 
 
 <div class="table-responsive">
-	<table class="table table-hover table-dark" id="tablaUsuarios">
+	<table class="table table-hover table-dark" id="tbusuario">
 		<thead>
 			<tr style="text-align: center;">
 			<td>Nombres</td>
@@ -132,7 +132,7 @@ $Conexion=$conexion->Conexion();
 
 <script type="text/javascript">
 		$(document).ready(function(){
-			$('#tablaUsuarios').DataTable();
+			$('#tbusuario').DataTable();
 			
 		
 			$('#modificausuario').click(function(){
@@ -179,7 +179,7 @@ function eliminarUsuario(idUsuario) {
 		      					icon: "success",
 								  
 		    				});
-							$('#tablaUsuarios').load("../tablas/tablaUsuarios");
+							$('#tbusuario').load("../tablas/tablaUsuarios");
 						
 		   				} else {
 							
@@ -235,11 +235,11 @@ function actualizausuario(){
 		   			success:function(respuesta){
 						   
 					if(respuesta==1){
-						$('#tablaUsuarios').DataTable();
+						$('#tbusuario').DataTable();
 						swal(":d", "Usuario Actualizado", "success");
 						
 					
-					$('#tablaUsuarios').load("../tablas/tablaUsuarios");
+					$('#tbusuario').load("../tablas/tablaUsuarios");
 						
 					}else{
 						swal(":(", "fallo al actualizar", "error")

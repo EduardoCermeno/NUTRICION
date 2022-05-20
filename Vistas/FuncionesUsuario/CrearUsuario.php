@@ -2,7 +2,7 @@
 
 session_start();
 if (isset($_SESSION['usuario'])){
-include "../header.php";
+include "../header2.php";
 
 
 ?>
@@ -130,6 +130,7 @@ if(pass1==pass2){
 <script>
 function Limpiar(){
     $("#frmRegistro")[0].reset()
+}
 </script>
 
 
